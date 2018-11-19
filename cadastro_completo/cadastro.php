@@ -6,22 +6,23 @@
 	<link rel="shortcut icon" href="../imagens/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	
 </head>
 
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$banco = "cadastro";
-$conexao = mysqli_connect($host, $user, $pass, $banco) or die(mysqli_error());
-mysqli_select_db($conexao, $banco) or die(mysqli_error());
-    session_start();
-    if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-        header("Location: login.php");
-        exit;
-    } else {
-        echo "<center>Você está logado</center>";
-    } 
+require 'cadastro_completo/conexao.php';
+
+$conexao = mysqli_connect(HOST, USER, PASSWORD, DBNAME) or die(mysql_error());
+
+mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
+
+session_start();
+if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
+	header("Location: login.php");
+	exit;
+} else {
+	echo "<center>Você está logado</center>";
+}
 ?>
 
 <body>

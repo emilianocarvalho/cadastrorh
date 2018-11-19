@@ -7,10 +7,11 @@ define('HOST', 'localhost');
 define('DBNAME', 'cadastro');
 define('CHARSET', 'utf8');
 define('USER', 'root');
-define('PASSWORD', '');
+define('PASSWORD', 'D3vpr0c0n@');
 define('SERVER', 'linux');
 
-class conexao {
+class conexao
+{
     
     /*
      * Atributo estático de conexão
@@ -20,7 +21,8 @@ class conexao {
     /*
      * Escondendo o construtor da classe
      */
-    private function __construct() {
+    private function __construct()
+    {
         //
     }
 
@@ -28,28 +30,30 @@ class conexao {
      * Método privado para verificar se a extensão PDO do banco de dados escolhido
      * está habilitada
      */
-    private static function verificaExtensao() {
+    private static function verificaExtensao()
+    {
 
-        switch(SGBD):
+        switch (SGBD) :
             case 'mysql':
-                $extensao = 'pdo_mysql';
-                break;
-            case 'mssql':{
-                if(SERVER == 'linux'):
+            $extensao = 'pdo_mysql';
+            break;
+        case 'mssql':
+            {
+                if (SERVER == 'linux') :
                     $extensao = 'pdo_dblib';
-                else:
+                else :
                     $extensao = 'pdo_sqlsrv';
                 endif;
                 break;
             }
-            case 'postgre':
-                $extensao = 'pdo_pgsql';
-                break;
+        case 'postgre':
+            $extensao = 'pdo_pgsql';
+            break;
         endswitch;
 
-        if(!extension_loaded($extensao)):
+        if (!extension_loaded($extensao)) :
             echo "<h1>Extensão {$extensao} não habilitada!</h1>";
-            exit();
+        exit();
         endif;
     }
 
@@ -57,7 +61,8 @@ class conexao {
      * Método estático para retornar uma conexão válida
      * Verifica se já existe uma instância da conexão, caso não, configura uma nova conexão
      */
-    public static function getInstance() {
+    public static function getInstance()
+    {
 
         self::verificaExtensao();
 
@@ -66,19 +71,20 @@ class conexao {
                 $opcoes = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8');
                 switch (SGBD) :
                     case 'mysql':
-                        self::$pdo = new \PDO("mysql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
-                        break;
-                    case 'mssql':{
-                        if(SERVER == 'linux'):
+                    self::$pdo = new \PDO("mysql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
+                    break;
+                case 'mssql':
+                    {
+                        if (SERVER == 'linux') :
                             self::$pdo = new \PDO("dblib:host=" . HOST . "; database=" . DBNAME . ";", USER, PASSWORD, $opcoes);
-                        else:
+                        else :
                             self::$pdo = new \PDO("sqlsrv:server=" . HOST . "; database=" . DBNAME . ";", USER, PASSWORD, $opcoes);
                         endif;
                         break;
                     }
-                    case 'postgre':
-                        self::$pdo = new \PDO("pgsql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
-                        break;
+                case 'postgre':
+                    self::$pdo = new \PDO("pgsql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
+                    break;
                 endswitch;
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
@@ -88,11 +94,12 @@ class conexao {
         return self::$pdo;
     }
 
-    public static function isConectado(){
-        
-        if(self::$pdo):
+    public static function isConectado()
+    {
+
+        if (self::$pdo) :
             return true;
-        else:
+        else :
             return false;
         endif;
     }

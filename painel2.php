@@ -58,12 +58,10 @@
   ?>
 
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Procon PB  SI - PAINEL</a>
-      <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Procon PB SI - PAINEL </a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" />
       <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="index.php#">LOGIN</a>
-        </li>
+        <li class="nav-item text-nowrap"><a class="nav-link" href="index.php#">LOGIN</a></li>
       </ul>
     </nav>
 
@@ -74,72 +72,46 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
+                  <span data-feather="home"></span> Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Servidores
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="file"></span> Orders </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="shopping-cart"></span> Products </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="users"></span> Customers </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="bar-chart-2"></span> Reports </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="layers"></span> Integrations </a>
               </li>
             </ul>
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>OUTRO TÓPICO</span>
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
+            >
+              <span>Saved reports</span>
               <a class="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="file-text"></span> Current month </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="file-text"></span> Last quarter </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="file-text"></span> Social engagement </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  ADICIONAR MENU
-                </a>
+                <a class="nav-link" href="#"> <span data-feather="file-text"></span> Year-end sale </a>
               </li>
             </ul>
           </div>
@@ -147,89 +119,69 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Servidores</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
-            </div>
-          </div>
-          
-          <form action="" method="get" id='form-contato' class="">
-          <div class="row">
-            <div class="col">          
-            <label class="control-label" for="termo">Pesquisar</label>            
-              <input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
-            </div>
-          </div>
-          <br>
-            <div class="row">
-            <div class="col">          
-
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-            <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-            <a href='cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
-          </div>
-          </div>
-          </form>
-          <!-- </div> -->
+      <h1>Servidores</h1>
       
+			<form action="" method="get" id='form-contato' class="">
+				<label class="control-label" for="termo">Pesquisar</label>
+				<div class='col-md-7'>
+			    	<input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
+				</div>
+			    <button type="submit" class="btn btn-primary">Pesquisar</button>
+			    <a href='painel.php' class="btn btn-primary">Ver Todos</a>
+			</form>
 
+			<a href='cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
 
-          <!-- <h2>Section title</h2> -->
-          <!-- <div class="table-responsive"> -->
-          <?php if (!empty($clientes)) : ?>
+          <!-- <div class="container">
 
-<table class="table table-striped table-hover table-sm">
-<caption>Listagem dos servidores</caption>
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">FOTO</th>
-      <th scope="col">NOME</th>
-      <th scope="col">E-MAIL</th>
-      <th scope="col">CELULAR</th>
-      <th scope="col">STATUS</th>
-      <th scope="col">AÇÃO</th>
-    </tr>
-  </thead>
-  <tbody>				
-  <?php foreach ($clientes as $cliente) : ?>
-    <tr>
-      <th scope="row"><?= $cliente->id ?></th>
-      <td><img src='cadastro_completo/fotos/<?= $cliente->foto ?>' height='40' width='40'></td>
-      <td><?= $cliente->nome ?></td>
-      <td><?= $cliente->email ?></td>
-      <td><?= $cliente->celular ?></td>
-      <td><?= $cliente->status ?></td>
-      <td>
-        <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-primary">Editar</a>															
-        <a href='javascript:void(0)' class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
-      </td>
-    </tr>	
-  <?php endforeach; ?>
-</table>
+			<div class="row"> -->
 
-<?php else : ?>
+			<?php if (!empty($clientes)) : ?>
 
-  <h3 class="text-center text-primary">Não existem Funcionários cadastrados!</h3>
-<?php endif; ?>
+				<table class="table table-striped table-hover table-sm">
+				<caption>Listagem dos servidores</caption>
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">FOTO</th>
+							<th scope="col">NOME</th>
+							<th scope="col">E-MAIL</th>
+							<th scope="col">CELULAR</th>
+							<th scope="col">STATUS</th>
+							<th scope="col">AÇÃO</th>
+						</tr>
+					</thead>
+					<tbody>				
+					<?php foreach ($clientes as $cliente) : ?>
+						<tr>
+							<th scope="row"><?= $cliente->id ?></th>
+							<td><img src='cadastro_completo/fotos/<?= $cliente->foto ?>' height='40' width='40'></td>
+							<td><?= $cliente->nome ?></td>
+							<td><?= $cliente->email ?></td>
+							<td><?= $cliente->celular ?></td>
+							<td><?= $cliente->status ?></td>
+							<td>
+								<a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-primary">Editar</a>															
+								<a href='javascript:void(0)' class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
+							</td>
+						</tr>	
+					<?php endforeach; ?>
+				</table>
 
-<p style="text-align:center;">
-<a href="logout.php"><input type="submit" class="sb bradius" value="sair" /></a>
-</p>
-    <!-- </table> -->
-          </div>
-          
+				<?php else : ?>
+
+					<h3 class="text-center text-primary">Não existem Funcionários cadastrados!</h3>
+				<?php endif; ?>
+		
+				<p style="text-align:center;">
+				<a href="logout.php"><input type="submit" class="sb bradius" value="sair" /></a>
+				</p>
+				</div>
+</div>	
+				  
         </main>
       </div>
     </div>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

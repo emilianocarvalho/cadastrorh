@@ -8,21 +8,20 @@
 <body>
 <?php
 // include("cadastro.php");
+require './cadastro_completo/conexao.php';
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$banco = "cadastro";
-$conexao = mysqli_connect($host, $user, $pass, $banco) or die(mysql_error());
+$conexao = mysqli_connect(HOST, USER, PASSWORD, DBNAME) or die(mysql_error());
+
+// $conexao = mysqli_connect($host, $user, $pass, $banco) or die(mysql_error());
 // (mysql_select_db($banco) or die(mysql_error());
 
-$nome=$_POST['nome'];
-$sobrenome=$_POST['sobrenome'];
-$pais=$_POST['pais'];
-$estado=$_POST['estado'];
-$email=$_POST['email'];
-$senha=$_POST['senha'];
-$cidade=$_POST['cidade'];
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$pais = $_POST['pais'];
+$estado = $_POST['estado'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+$cidade = $_POST['cidade'];
 
 $sql = "INSERT INTO usuarios (nome, sobrenome, pais, estado, cidade, email, senha)
 VALUES('$nome', '$sobrenome', '$pais', '$estado', '$cidade', '$email', '$senha')";
