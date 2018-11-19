@@ -170,10 +170,9 @@
           <br>
             <div class="row">
             <div class="col">          
-
             <button type="submit" class="btn btn-primary">Pesquisar</button>
             <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-            <a href='cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
+            <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
           </div>
           </div>
           </form>

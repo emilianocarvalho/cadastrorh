@@ -2,15 +2,24 @@
 <html>
 <head>    
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title>Cadastro de Cliente</title>
+	<!-- <title>Cadastro de Cliente</title>
 	<link rel="shortcut icon" href="../imagens/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css"> -->
+	<title>Procon PB - SI (Sistemas Internos)</title>
+
+<!-- Bootstrap core CSS -->
+<link href="./dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<!-- <link href="./assets/css/signin.css" rel="stylesheet" /> -->
+<!-- Custom styles for this template -->
+<link href="./assets/css/dashboard.css" rel="stylesheet" />
+
 	
 </head>
 
 <?php
-require 'cadastro_completo/conexao.php';
+require 'conexao.php';
 
 $conexao = mysqli_connect(HOST, USER, PASSWORD, DBNAME) or die(mysql_error());
 
