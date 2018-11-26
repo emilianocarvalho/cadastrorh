@@ -23,10 +23,7 @@
 </head>
 
 <?php
-
-// require './conexao.php';
 require_once 'conexao.php';
-
 $conexao = mysqli_connect(HOST, USER, PASSWORD, DBNAME) or die(mysql_error());
 
 mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
@@ -40,7 +37,8 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 }
 
 // Recebe o id do cliente do cliente via GET
-$id_cliente = (isset($_GET['id'])) ? $_GET['id'] : '';
+if (isset($_GET['id']))
+    $id_cliente = (isset($_GET['id'])) ? $_GET['id'] : '';
 
 // Valida se existe um id e se ele é numérico
 if (!empty($id_cliente) && is_numeric($id_cliente)) :
