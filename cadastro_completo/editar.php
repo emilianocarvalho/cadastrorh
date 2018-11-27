@@ -176,8 +176,9 @@ endif;
             <?php if (empty($cliente)) : ?>
                 <h3 class="text-center text-danger">Cliente não encontrado!</h3>
             <?php else : ?>
-                <form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
-                    <div class="row">
+                <form class="form-api needs-validation"  action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
+
+                <div class="row">
                         <label for="nome">Alterar Foto</label>
                           <div class="col-md-2">
                             <a href="#" class="thumbnail">
@@ -187,213 +188,265 @@ endif;
                           <input type="file" name="foto" id="foto" value="foto" >
                       </div>
 
-                    <div class="form-group">
-                      <label for="nome">Nome</label>
-                      <input type="text" class="form-control" id="nome" name="nome" value="<?= $cliente->nome ?>" placeholder="Infome o Nome">
-                      <span class='msg-erro msg-nome'></span>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                     <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">DADOS PESSOAIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">CADASTRAIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">FUNCIONAIS</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="form-row">
+                        <div class="form-group col-md-4">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?= $cliente->nome ?>" placeholder="Infome o Nome">
+                        <span class='msg-erro msg-nome'></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="pai">Pai</label>
+                            <input type="text" class="form-control" id="pai" name="pai" value="<?= $cliente->pai ?>" placeholder="Informe o Pai">
+                            <span class='msg-erro msg-pai'></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="mae">Mãe</label>
+                            <input type="text" class="form-control" id="mae" name="mae" value="<?= $cliente->mae ?>" placeholder="Informe a Mãe">
+                            <span class='msg-erro msg-mae'></span>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="pai">Pai</label>
-                        <input type="text" class="form-control" id="pai" name="pai" value="<?= $cliente->pai ?>" placeholder="Informe o Pai">
-                        <span class='msg-erro msg-pai'></span>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="rua">Rua</label>
+                            <input type="rua" class="form-control" id="rua" name="rua" value="<?= $cliente->rua ?>" placeholder="Informe a Rua">
+                            <span class='msg-erro msg-rua'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="numero">N°</label>
+                            <input type="numero" class="form-control" id="numero" maxlength="12" name="numero" value="<?= $cliente->numero ?>" placeholder="Informe o N°">
+                            <span class='msg-erro msg-numero'></span>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="mae">Mãe</label>
-                        <input type="text" class="form-control" id="mae" name="mae" value="<?= $cliente->mae ?>" placeholder="Informe a Mãe">
-                        <span class='msg-erro msg-mae'></span>
+                    <div class="form-row">
+
+                        <div class="formgroup col-md-3">
+                            <label for="complemento">Complemento</label>
+                            <input type="complemento" class="form-control" id="complemento" name="complemento" value="<?= $cliente->complemento ?>" placeholder="Informe o Complemento">
+                            <span class='msg-erro msg-complemento'></span>
+                        </div>	
+
+                        <div class="form-group col-md-2">
+                            <label for="bairro">Bairro</label>
+                            <input type="bairro" class="form-control" id="bairro" name="bairro" value="<?= $cliente->bairro ?>" placeholder="Informe o Bairro">
+                            <span class='msg-erro msg-bairro'></span>
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                            <label for="cidade">Cidade</label>
+                            <input type="cidade" class="form-control" id="cidade" name="cidade" value="<?= $cliente->cidade ?>" placeholder="Informe a Cidade">
+                            <span class='msg-erro msg-cidade'></span>
+                        </div>
+
+                        <div class="form-group col-md-1">
+                            <label for="cep">Cep</label>
+                            <input type="cep" class="form-control" id="cep" maxlength="9" name="cep" value="<?= $cliente->cep ?>" placeholder="Infome o Cep">
+                            <span class='msg-erro msg-cep'></span>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="rua">Rua</label>
-                        <input type="rua" class="form-control" id="rua" name="rua" value="<?= $cliente->rua ?>" placeholder="Informe a Rua">
-                        <span class='msg-erro msg-rua'></span>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?= $cliente->email ?>" placeholder="Informe o E-mail">
+                            <span class='msg-erro msg-email'></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="matricula">Matricula</label>
+                            <input type="matricula" class="form-control" id="matricula" maxlength="9" name="matricula" value="<?= $cliente->matricula ?>" placeholder="Informe a Matricula">
+                            <span class="msg-erro msg-matricula"></span>
+                        </div>	
+                    </div> 
+
+                </div>
+
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="form-row">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+
+                            <label for="cpf">CPF</label>
+                            <input type="cpf" class="form-control" id="cpf" maxlength="14" name="cpf" value="<?= $cliente->cpf ?>" placeholder="Informe o CPF">
+                            <span class='msg-erro msg-cpf'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="identidade">RG</label>
+                            <input type="identidade" class="form-control" id="identidade" maxlength="20" name="identidade" value="<?= $cliente->identidade ?>" placeholder="Informe a RG">
+                            <span class='msg-erro msg-identidade'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="titulo">Titulo</label>
+                            <input type="titulo" class="form-control" id="titulo" maxlength="14" name="titulo" value="<?= $cliente->titulo ?>" placeholder="Informe o Titulo">
+                            <span class='msg-erro msg-titulo'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="zona">Zona</label>
+                            <input type="zona" class="form-control" id="zona" maxlength="3" name="zona" value="<?= $cliente->zona ?>" placeholder="Informe o Titulo">
+                            <span class='msg-erro msg-zona'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="secao">Seção</label>
+                            <input type="secao" class="form-control" id="secao" maxlength="4" name="secao" value="<?= $cliente->secao ?>" placeholder="Informe a Zona">
+                            <span class='msg-erro msg-secao'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="pis">PIS/PASEP</label>
+                            <input type="pis" class="form-control" id="pis" maxlength="14" name="pis" value="<?= $cliente->pis ?>" placeholder="Informe o PIS/PASEP">
+                            <span class='msg-erro msg-pis'></span>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="numero">N°</label>
-                        <input type="numero" class="form-control" id="numero" maxlength="12" name="numero" value="<?= $cliente->numero ?>" placeholder="Informe o N°">
-                        <span class='msg-erro msg-numero'></span>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-2">
+                            <label for="carteiratrabalho">Carteira de Trabalho</label>
+                            <input type="carteiratrabalho" class="form-control" id="carteiratrabalho" maxlength="20" name="carteiratrabalho" value="<?= $cliente->carteiratrabalho ?>" placeholder="Infome a carteira de trabalho">
+                            <span class='msg-erro msg-carteiratrabalho'></span>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="reservista">Carteira Reservista</label>
+                            <input type="reservista" class="form-control" id="reservista" maxlength="20" name="reservista" value="<?= $cliente->reservista ?>" placeholder="Informe a Reservista">
+                            <span class='msg-erro msg-reservista'></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="escolar">Instrução Escolar</label>
+                            <input type="escolar" class="form-control" id="escolar" maxlength="50" name="escolar" value="<?= $cliente->escolar ?>" placeholder="Informer a Instrução Escolar">
+                            <span class='msg-erro msg-escolar'></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="instituicao">Instituição</label>
+                            <input type="instituicao" class="form-control" id="instituicao" maxlength="50" name="instituicao" value="<?= $cliente->instituicao ?>" placeholder="Informe a Instituição">
+                            <span class='msg-erro msg-instituicao'></span>
+                        </div>
                     </div>
 
-                    <div class="formgroup">
-                        <label for="complemento">Complemento</label>
-                        <input type="complemento" class="form-control" id="complemento" name="complemento" value="<?= $cliente->complemento ?>" placeholder="Informe o Complemento">
-                        <span class='msg-erro msg-complemento'></span>
-                    </div>	
+                    <div class="form-row">
 
-                    <div class="form-group">
-                        <label for="cep">Cep</label>
-                        <input type="cep" class="form-control" id="cep" maxlength="9" name="cep" value="<?= $cliente->cep ?>" placeholder="Infome o Cep">
-                        <span class='msg-erro msg-cep'></span>
+                        <div class="form-group col-md-3">
+                            <label for="curso">Curso Formação</label>
+                            <input type="curso" class="form-control" id="curso" maxlength="50" name="curso" value="<?= $cliente->curso ?>" placeholder="Informe o Curso Formação">
+                            <span class='msg-erro msg-curso'></span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="deficiente">Deficiente</label>
+                            <input type="deficiente" class="form-control" id="deficiente" maxlength="50" name="deficiente" value="<?= $cliente->deficiente ?>" placeholder="Informe a Deficiência">
+                            <span class='msg-erro msg-deficiente'></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="nota">Anotações:</label>
+                            <textarea class="form-control" name="nota" id="nota"><?php echo $cliente->nota; ?></textarea>
+                            <span class='msg-erro msg-nota'></span>
+                        </div>
+
                     </div>
+                </div>
+                    
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><div class="form-row">
 
-                    <div class="form-group">
-                        <label for="bairro">Bairro</label>
-                        <input type="bairro" class="form-control" id="bairro" name="bairro" value="<?= $cliente->bairro ?>" placeholder="Informe o Bairro">
-                        <span class='msg-erro msg-bairro'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cidade">Cidade</label>
-                        <input type="cidade" class="form-control" id="cidade" name="cidade" value="<?= $cliente->cidade ?>" placeholder="Informe a Cidade">
-                        <span class='msg-erro msg-cidade'></span>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="email">E-mail</label>
-                      <input type="email" class="form-control" id="email" name="email" value="<?= $cliente->email ?>" placeholder="Informe o E-mail">
-                      <span class='msg-erro msg-email'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="matricula">Matricula</label>
-                        <input type="matricula" class="form-control" id="matricula" maxlength="9" name="matricula" value="<?= $cliente->matricula ?>" placeholder="Informe a Matricula">
-                        <span class="msg-erro msg-matricula"></span>
-                    </div>	
-
-                    <div class="form-group">
-                      <label for="cpf">CPF</label>
-                      <input type="cpf" class="form-control" id="cpf" maxlength="14" name="cpf" value="<?= $cliente->cpf ?>" placeholder="Informe o CPF">
-                      <span class='msg-erro msg-cpf'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="identidade">RG</label>
-                        <input type="identidade" class="form-control" id="identidade" maxlength="20" name="identidade" value="<?= $cliente->identidade ?>" placeholder="Informe a RG">
-                        <span class='msg-erro msg-identidade'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="titulo">Titulo</label>
-                        <input type="titulo" class="form-control" id="titulo" maxlength="14" name="titulo" value="<?= $cliente->titulo ?>" placeholder="Informe o Titulo">
-                        <span class='msg-erro msg-titulo'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="zona">Zona</label>
-                        <input type="zona" class="form-control" id="zona" maxlength="3" name="zona" value="<?= $cliente->zona ?>" placeholder="Informe o Titulo">
-                        <span class='msg-erro msg-zona'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="secao">Seção</label>
-                        <input type="secao" class="form-control" id="secao" maxlength="4" name="secao" value="<?= $cliente->secao ?>" placeholder="Informe a Zona">
-                        <span class='msg-erro msg-secao'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pis">PIS/PASEP</label>
-                        <input type="pis" class="form-control" id="pis" maxlength="14" name="pis" value="<?= $cliente->pis ?>" placeholder="Informe o PIS/PASEP">
-                        <span class='msg-erro msg-pis'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="carteiratrabalho">Carteira de Trabalho</label>
-                        <input type="carteiratrabalho" class="form-control" id="carteiratrabalho" maxlength="20" name="carteiratrabalho" value="<?= $cliente->carteiratrabalho ?>" placeholder="Infome a carteira de trabalho">
-                        <span class='msg-erro msg-carteiratrabalho'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reservista">Carteira Reservista</label>
-                        <input type="reservista" class="form-control" id="reservista" maxlength="20" name="reservista" value="<?= $cliente->reservista ?>" placeholder="Informe a Reservista">
-                        <span class='msg-erro msg-reservista'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="escolar">Instrução Escolar</label>
-                        <input type="escolar" class="form-control" id="escolar" maxlength="50" name="escolar" value="<?= $cliente->escolar ?>" placeholder="Informer a Instrução Escolar">
-                        <span class='msg-erro msg-escolar'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="instituicao">Instituição</label>
-                        <input type="instituicao" class="form-control" id="instituicao" maxlength="50" name="instituicao" value="<?= $cliente->instituicao ?>" placeholder="Informe a Instituição">
-                        <span class='msg-erro msg-instituicao'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="curso">Curso Formação</label>
-                        <input type="curso" class="form-control" id="curso" maxlength="50" name="curso" value="<?= $cliente->curso ?>" placeholder="Informe o Curso Formação">
-                        <span class='msg-erro msg-curso'></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="deficiente">Deficiente</label>
-                        <input type="deficiente" class="form-control" id="deficiente" maxlength="50" name="deficiente" value="<?= $cliente->deficiente ?>" placeholder="Informe a Deficiência">
-                        <span class='msg-erro msg-deficiente'></span>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="nota">Anotações:</label>
-                    <textarea class="form-control" name="nota" id="nota"><?php echo $cliente->nota; ?></textarea>
-                        <span class='msg-erro msg-nota'></span>
-                    </div>
-
-                    <div class="form-group">
+                <div class="form-group col-md-4">
                         <label for="cargo">Cargo</label>
                         <input type="cargo" class="form-control" name="cargo" id="cargo" value="<?= $cliente->cargo ?>" placeholder="Informe o Cargo">
                         <span class='msg-erro msg-cargo'></span>
-                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="funcao">Função</label>
-                        <input type="funcao" class="form-control" name="funcao" id="funcao" value="<?= $cliente->funcao ?>" placeholder="Informe a Função">
-                        <span class='msg-erro msg-funcao'></span>
-                    </div>
+                <div class="form-group col-md-4">
+                    <label for="funcao">Função</label>
+                    <input type="funcao" class="form-control" name="funcao" id="funcao" value="<?= $cliente->funcao ?>" placeholder="Informe a Função">
+                    <span class='msg-erro msg-funcao'></span>
+                </div>
 
-                    <div class="form-group">
-                      <label for="forma_admissao">Forma de Admissão</label>
-                      <select class="form-control" name="forma_admissao" id="forma_admissao">
+                <div class="form-group col-md-2">
+                    <label for="forma_admissao">Forma de Admissão</label>
+                    <select class="form-control" name="forma_admissao" id="forma_admissao">
                         <option value="<?= $cliente->forma_admissao ?>"><?= $cliente->forma_admissao ?></option>
                         <option value="Sem Concurso">Sem Concurso</option>
                         <option value="Concurso">Concurso</option>
                         <option value="Contrato">Contrato</option>
                         <option value="Em Comissao">Em Comissão</option>
-                      </select>
-                      <span class='msg-erro msg-forma_admissao'></span>
-                    </div>
+                    </select>
+                    <span class='msg-erro msg-forma_admissao'></span>
+                </div>
 
-                    <div class="form-group">
-                        <label for="regime">Regime</label>
-                        <select class="form-control" name="regime" id="regime">
-                            <option value="<?= $cliente->regime ?>"><?= $cliente->regime ?></option>
-                            <option value="Estatuario">Estatutário</option>
-                            <option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
-                        </select>
-                        <span class='msg-erro msg-regime'></span>
-                    </div>
+                <div class="form-group col-md-2">
+                    <label for="regime">Regime</label>
+                    <select class="form-control" name="regime" id="regime">
+                        <option value="<?= $cliente->regime ?>"><?= $cliente->regime ?></option>
+                        <option value="Estatuario">Estatutário</option>
+                        <option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
+                    </select>
+                    <span class='msg-erro msg-regime'></span>
+                </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="setor">Setor</label>
-                        <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
-                        <span class='msg-erro msg-setor'></span>
-                    </div>
+                <div class="form-row">
 
-                    <div class="form-group">
-                      <label for="data_nascimento">Data de Nascimento</label>
-                      <input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
-                      <span class='msg-erro msg-data'></span>
-                    </div>
+                <div class="form-group col-md-3">
+                    <label for="setor">Setor</label>
+                    <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
+                    <span class='msg-erro msg-setor'></span>
+                </div>
 
-                    <div class="form-group">
-                        <label for="data_admissao">Data de Admissão</label>
-                        <input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
-                        <span class='msg-erro msg-data2'></span>
-                    </div>
+                <div class="form-group col-md-2">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                    <input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
+                    <span class='msg-erro msg-data'></span>
+                </div>
 
-                    <div class="form-group">
-                        <label for="sexo">Sexo</label>
-                        <select class="form-control" name="sexo" id="sexo">
-                            <option value="<?= $cliente->sexo ?>"><?= $cliente->sexo ?></option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select>
-                        <span class='msg-erro msg-sexo'></span>
-                    </div>
+                <div class="form-group col-md-2">
+                    <label for="data_admissao">Data de Admissão</label>
+                    <input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
+                    <span class='msg-erro msg-data2'></span>
+                </div>
 
-                    <div class="form-group">
+                <div class="form-group col-md-2">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control" name="sexo" id="sexo">
+                        <option value="<?= $cliente->sexo ?>"><?= $cliente->sexo ?></option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                    <span class='msg-erro msg-sexo'></span>
+                </div>
+
+                <div class="form-group col-md-3">
                         <label for="nacionalidade">Nacionalidade</label>
                         <select class="form-control" name="nacionalidade" id="nacionalidade">
                         <option value="<?= $cliente->nacionalidade ?>"><?= $cliente->nacionalidade ?></option>
@@ -501,14 +554,17 @@ endif;
                             </select>	
                         <span class='msg-erro msg-nacionalidade'></span>
                         </div>
+                    </div>
 
-                        <div class="form-group">
+                    <div class="form-row">
+
+                        <div class="form-group col-md-3">
                             <label for="naturalidade">Naturalidade</label>
                             <input type="naturalidade" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
                             <span class='msg-erro msg-naturalidade'></span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-md-3">
                             <label for="estado">Estado</label>
                             <select class="form-control" name="estado" id="estado">
                                 <option value="<?= $cliente->estado ?>"><?= $cliente->estado ?></option>
@@ -542,7 +598,7 @@ endif;
                         <span class='msg-erro msg-estado'></span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-md-3">
                         <label for="estado_civil">Estado Civil</label>
                             <select class="form-control" name="estado_civil" id="estado_civil">
                             <option value="<?= $cliente->estado_civil ?>"><?= $cliente->estado_civil ?></option>
@@ -556,56 +612,81 @@ endif;
                         <span class='msg-erro msg-estado_civil'></span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-md-3">
                         <label for="numero_dependente">Número de Dependente(s)</label>
                         <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
                         <span class='msg-erro msg-numero_dependente'></span>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                      <label for="telefone">Telefone</label>
-                      <input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
-                      <span class='msg-erro msg-telefone'></span>
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        <label for="telefone">Telefone</label>
+                        <input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
+                        <span class='msg-erro msg-telefone'></span>
                     </div>
-                    <div class="form-group">
-                      <label for="celular">Celular</label>
-                      <input type="celular" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
-                      <span class='msg-erro msg-celular'></span>
+                    <div class="form-group col-md-4">
+                        <label for="celular">Celular</label>
+                        <input type="celular" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
+                        <span class='msg-erro msg-celular'></span>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group col-md-4">
                         <label for="whatsapp">Whatsapp</label>
                         <input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" value="<?= $cliente->whatsapp ?>" placeholder="Informe o Whatsapp">
                         <span class='msg-erro msg-whatsapp'></span>
                     </div>
+                </div>
 
-                    <div class="form-group">
+                <div class="form-row">
+
+                    <div class="form-group col-md-3">
                         <label for="banco">Banco</label>
                         <input type="banco" class="form-control" id="banco" name="banco" value="<?= $cliente->banco ?>" style="text-transform:uppercase;" placeholder="Informe o Banco">
                         <span class='msg-erro msg-banco'></span>
                     </div>	
 
-                    <div class="form-group">
+                    <div class="form-group col-md-3">
                         <label for="agencia">Agencia</label>
                         <input type="agencia" class="form-control" id="agencia" maxlength="20" name="agencia" value="<?= $cliente->agencia ?>" placeholder="Informe a Agência">
                         <span class='msg-erro msg-agencia'></span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-md-3">
                         <label for="conta_corrente">Conta Corrente</label>
                         <input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
                         <span class='msg-erro msg-conta_corrente'></span>
                     </div>
 
-                    <div class="form-group">
-                      <label for="status">Status</label>
-                      <select class="form-control" name="status" id="status">
+                    <div class="form-group col-md-3">
+                    <label for="status">Status</label>
+                    <select class="form-control" name="status" id="status">
                         <option value="<?= $cliente->status ?>"><?= $cliente->status ?></option>
                         <option value="Ativo">Ativo</option>
                         <option value="Inativo">Inativo</option>
-                      </select>
-                      <span class='msg-erro msg-status'></span>
+                    </select>
+                    <span class='msg-erro msg-status'></span>
                     </div>
+
+                </div>
+            </div>
+                
+                
+                
+                
+                </div>
+
+
+
+
+                    
+ 
+                    
+                    
+
+
+                    
 
                     <input type="hidden" name="acao" value="editar">
                     <input type="hidden" name="id" value="<?= $cliente->id ?>">
