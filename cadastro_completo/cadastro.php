@@ -376,59 +376,79 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 						
 						<div class="tab-pane fade" id="DadosFuncionario" role="tabpanel" aria-labelledby="DadosFuncionario-tab">
 
-							<div class="form-group">
-								<label for="cargo">Cargo</label>
-								<input type="cargo" class="form-control" id="cargo" name="cargo" placeholder="Informe o Cargo">
-								<span class='msg-erro msg-cargo'></span>
-							</div>
+						<div class="row">
 
-							<div class="form-group">
-								<label for="funcao">Função</label>
-								<input type="funcao" class="form-control" id="funcao" name="funcao" placeholder="Informe a Função">
-								<span class='msg-erro msg-funcao'></span>
-							</div>
+								<div class="form-group col-md-4">
+									<label for="cargo">Cargo</label>
+									<input type="cargo" class="form-control" id="cargo" name="cargo" placeholder="Informe o Cargo">
+									<span class='msg-erro msg-cargo'></span>
+								</div>
 
-							<div class="form-group">
-								<label for="forma_admissao">Forma de Admissão</label>
-								<select class="form-control" name="forma_admissao" id="forma_admissao">
-								<option value="">Forma de Admissão</option>
-								<option value="Sem Concurso">Sem Concurso</option>
-								<option value="Concurso">Concurso</option>
-								<option value="Contrato">Contrato</option>
-								<option value="Em Comissao">Em Comissão</option>
-								</select>
-								<span class='msg-erro msg-forma_admissao'></span>
-							</div>
+								<div class="form-group col-md-4">
+									<label for="funcao">Função</label>
+									<input type="funcao" class="form-control" id="funcao" name="funcao" placeholder="Informe a Função">
+									<span class='msg-erro msg-funcao'></span>
+								</div>
 
-							<div class="form-group">
-								<label for="regime">Regime</label>
-								<select class="form-control" name="regime" id="regime">
-								<option value="">Regime</option>
-								<option value="estatutário">Estatutário</option>
-								<option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
-								</select>
-								<span class='msg-erro msg-regime'></span>
-							</div>
+						</div>
 
-							<div class="form-group">
-								<label for="setor">Setor</label>
-								<input type="setor" class="form-control" id="setor" name="setor" placeholder="Informe o Setor">
-								<span class='msg-erro msg-setor'></span>
-							</div>
+						<div class="row">
 
-							<div class="form-group">
-								<label for="data_nascimento">Data de Nascimento</label>
-								<input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" name="data_nascimento">
-								<span class='msg-erro msg-data'></span>
-							</div>
+								<div class="form-group col-md-2">
+									<label for="forma_admissao">Forma de Admissão</label>
+									<select class="form-control" name="forma_admissao" id="forma_admissao">
+									<option value="">Forma de Admissão</option>
+									<option value="Sem Concurso">Sem Concurso</option>
+									<option value="Concurso">Concurso</option>
+									<option value="Contrato">Contrato</option>
+									<option value="Em Comissao">Em Comissão</option>
+									</select>
+									<span class='msg-erro msg-forma_admissao'></span>
+								</div>
 
-							<div class="form-group">
-								<label for="data_admissao">Data de Admissão</label>
-								<input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" name="data_admissao">
-								<span class='msg-erro msg-data2'></span>
-							</div>
+								<div class="form-group col-md-3">
+									<label for="regime">Regime</label>
+									<select class="form-control" name="regime" id="regime">
+									<option value="">Regime</option>
+									<option value="estatutário">Estatutário</option>
+									<option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
+									</select>
+									<span class='msg-erro msg-regime'></span>
+								</div>
 
-							<div class="form-group">
+								<div class="form-group col-md-3">
+									<label for="setor">Setor</label>
+									<input type="setor" class="form-control" id="setor" name="setor" placeholder="Informe o Setor">
+									<span class='msg-erro msg-setor'></span>
+								</div>
+
+						</div>
+
+						<div class="row">
+
+								<div class="form-group col-md-3">
+									<label for="data_nascimento">Data de Nascimento</label>
+									<input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" name="data_nascimento">
+									<span class='msg-erro msg-data'></span>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label for="data_admissao">Data de Admissão</label>
+									<input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" name="data_admissao">
+									<span class='msg-erro msg-data2'></span>
+								</div>
+
+								<div class="form-group col-md-2">
+										<label for="numero_dependente">N de Dependente(s)</label>
+										<input type="numero_dependente" class="form-control" maxlength="2" name="numero_dependente" id="numero_dependente" placeholder="Informe o Número de Dependente">
+										<span class='msg-erro msg-numero_dependente'></span>
+								</div>
+						
+						</div>
+
+						<div class="row">
+
+							<div class="form-group col-md-2">
 								<label for="sexo">Sexo</label>
 								<select class="form-control" name="sexo" id="sexo">
 								<option value="">Selecione o Sexo</option>
@@ -438,7 +458,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 								<span class='msg-erro msg-sexo'></span>
 							</div>	
 
-							<div class="form-group">
+							<div class="form-group col-md-4">
 								<label for="nacionalidade">Nacionalidade</label>
 									<select class="form-control" name="nacionalidade" id="nacionalidade">
 										<option value="Brasil - Brasileiro">Brasil - Brasileiro</option>
@@ -546,7 +566,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 								<span class='msg-erro msg-nacionalidade'></span>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group col-md-2">
 								<label for="estado_civil">Estado Civil</label>
 									<select class="form-control" name="estado_civil" id="estado_civil">
 									<option value="">Selecione o Estado Civil</option>
@@ -559,89 +579,99 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 									</select>	
 									<span class='msg-erro msg-estado_civil'></span>
 							</div>
+						
+						</div>
 
-							<div class="form-group">
-									<label for="numero_dependente">Números de Dependente(s)</label>
-									<input type="numero_dependente" class="form-control" maxlength="2" name="numero_dependente" id="numero_dependente" placeholder="Informe o Número de Dependente">
-									<span class='msg-erro msg-numero_dependente'></span>
-							</div>
+						<div class="row">
 
-							<div class="form-group">
-								<label for="naturalidade">Naturalidade</label>
-								<input type="naturalidade" class="form-control" maxlength="20" name="naturalidade" id="naturalidade" placeholder="Informe a Naturalidade">
-								<span class='msg-erro msg-naturalidade'></span>
-							</div>
+								<div class="form-group col-md-4">
+									<label for="naturalidade">Naturalidade</label>
+									<input type="naturalidade" class="form-control" maxlength="20" name="naturalidade" id="naturalidade" placeholder="Informe a Naturalidade">
+									<span class='msg-erro msg-naturalidade'></span>
+								</div>
 
-							<div class="form-group">
-								<label for="estado">Estado</label>
-								<select class="form-control" name="estado" id="estado">
-									<option value="Paraíba PB">Paraíba (PB)</option>
-									<option value="Amazonas AM">Amazonas (AM)</option>
-									<option value="Roraima RR">Roraima (RR)</option>
-									<option value="Amapá AP">Amapá (AP)</option>
-									<option value="Pará PA">Pará (PA)</option>
-									<option value="Tocantins TO">Tocantins (TO)</option>
-									<option value="Rondônia RO">Rondônia (RO)</option>
-									<option value="Acre AC">Acre (AC)</option>
-									<option value="Maranhão MA">Maranhão (MA)</option>
-									<option value="Piauí PI">Piauí (PI)</option>
-									<option value="Ceará CE">Ceará (CE)</option>
-									<option value="Rio Grande do Norte RN">Rio Grande do Norte (RN)</option>
-									<option value="Pernambuco PE">Pernambuco (PE)</option>
-									<option value="Sergipe SE">Sergipe (SE)</option>
-									<option value="Alagoas AL">Alagoas (AL)</option>
-									<option value="Bahia BA">Bahia (BA)</option>
-									<option value="Mato Grosso MT">Mato Grosso (MT)</option>
-									<option value="Mato Grosso do Sul MS">Mato Grosso do Sul (MS)</option>
-									<option value="Goiás GO">Goiás (GO)</option>
-									<option value="São Paulo SP">São Paulo (SP)</option>
-									<option value="Rio de Janeiro RJ">Rio de Janeiro (RJ)</option>
-									<option value="Espírito Santo ES">Espírito Santo (ES)</option>
-									<option value="Minas Gerais MG">Minas Gerais (MG)</option>
-									<option value="Paraná PR">Paraná (PR)</option>
-									<option value="Rio Grande do Sul RS">Rio Grande do Sul (RS)</option>
-									<option value="Santa Catarina SC">Santa Catarina (SC)</option>
-								</select>	
-								<span class='msg-erro msg-estado'></span>
-							</div>
+								<div class="form-group col-md-4">
+									<label for="estado">Estado</label>
+									<select class="form-control" name="estado" id="estado">
+										<option value="Paraíba PB">Paraíba (PB)</option>
+										<option value="Amazonas AM">Amazonas (AM)</option>
+										<option value="Roraima RR">Roraima (RR)</option>
+										<option value="Amapá AP">Amapá (AP)</option>
+										<option value="Pará PA">Pará (PA)</option>
+										<option value="Tocantins TO">Tocantins (TO)</option>
+										<option value="Rondônia RO">Rondônia (RO)</option>
+										<option value="Acre AC">Acre (AC)</option>
+										<option value="Maranhão MA">Maranhão (MA)</option>
+										<option value="Piauí PI">Piauí (PI)</option>
+										<option value="Ceará CE">Ceará (CE)</option>
+										<option value="Rio Grande do Norte RN">Rio Grande do Norte (RN)</option>
+										<option value="Pernambuco PE">Pernambuco (PE)</option>
+										<option value="Sergipe SE">Sergipe (SE)</option>
+										<option value="Alagoas AL">Alagoas (AL)</option>
+										<option value="Bahia BA">Bahia (BA)</option>
+										<option value="Mato Grosso MT">Mato Grosso (MT)</option>
+										<option value="Mato Grosso do Sul MS">Mato Grosso do Sul (MS)</option>
+										<option value="Goiás GO">Goiás (GO)</option>
+										<option value="São Paulo SP">São Paulo (SP)</option>
+										<option value="Rio de Janeiro RJ">Rio de Janeiro (RJ)</option>
+										<option value="Espírito Santo ES">Espírito Santo (ES)</option>
+										<option value="Minas Gerais MG">Minas Gerais (MG)</option>
+										<option value="Paraná PR">Paraná (PR)</option>
+										<option value="Rio Grande do Sul RS">Rio Grande do Sul (RS)</option>
+										<option value="Santa Catarina SC">Santa Catarina (SC)</option>
+									</select>	
+									<span class='msg-erro msg-estado'></span>
+								</div>
 
-							<div class="form-group">
-								<label for="telefone">Telefone</label>
-								<input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" placeholder="Informe o Telefone">
-								<span class='msg-erro msg-telefone'></span>
-							</div>
+						</div>
 
-							<div class="form-group">
-								<label for="celular">Celular</label>
-								<input type="celular" class="form-control" id="celular" maxlength="13" name="celular" placeholder="Informe o Celular">
-								<span class='msg-erro msg-celular'></span>
-							</div>
-									
-							<div class="form-group">
-								<label for="whatsapp">Whatsapp</label>
-								<input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" placeholder="Informer o Whatsapp">
-								<span class='msg-erro msg-whatsapp'></span>
-							</div>
+						<div class="row">
 
-							<div class="form-group">
-								<label for="banco">Banco</label>
-								<input type="banco" class="form-control" id="banco" name="banco" placeholder="Informe o Banco" style="text-transform:uppercase;">
-								<span class='msg-erro msg-banco'></span>
-							</div>
+								<div class="form-group col-md-2">
+									<label for="telefone">Telefone</label>
+									<input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" placeholder="Informe o Telefone">
+									<span class='msg-erro msg-telefone'></span>
+								</div>
 
-							<div class="from-group">
-								<label for="agencia">Agencia</label>
-								<input type="agencia" class="form-control" id="agencia" maxlebgth="20" name="agencia" placeholder="Informe a Agência">
-								<span class='msf-erro msg-agencia'></span>
-							</div>
+								<div class="form-group col-md-3">
+									<label for="celular">Celular</label>
+									<input type="celular" class="form-control" id="celular" maxlength="13" name="celular" placeholder="Informe o Celular">
+									<span class='msg-erro msg-celular'></span>
+								</div>
+										
+								<div class="form-group col-md-3">
+									<label for="whatsapp">Whatsapp</label>
+									<input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" placeholder="Informer o Whatsapp">
+									<span class='msg-erro msg-whatsapp'></span>
+								</div>
+							
+						</div>
 
-							<div class="form-group">
-								<label for="conta_corrente">Conta Corrente</label>
-								<input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" placeholder="Informe a Conta Corrente">
-								<span class='msg-erro msg-conta_corrente'></span>
-							</div>		
+						<div class="row">
 
-							<div class="form-group">
+								<div class="form-group col-md-8">
+									<label for="banco">Banco</label>
+									<input type="banco" class="form-control" id="banco" name="banco" placeholder="Informe o Banco" style="text-transform:uppercase;">
+									<span class='msg-erro msg-banco'></span>
+								</div>
+						
+						</div>
+						
+						<div class="row">
+
+								<div class="from-group col-md-3">
+									<label for="agencia">Agencia</label>
+									<input type="agencia" class="form-control" id="agencia" maxlebgth="20" name="agencia" placeholder="Informe a Agência">
+									<span class='msf-erro msg-agencia'></span>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label for="conta_corrente">Conta Corrente</label>
+									<input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" placeholder="Informe a Conta Corrente">
+									<span class='msg-erro msg-conta_corrente'></span>
+								</div>
+
+								<div class="form-group col-md-2">
 									<label for="status">Status</label>
 									<select class="form-control" name="status" id="status">
 									<option value="">Selecione o Status</option>
@@ -650,6 +680,10 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 									</select>
 									<span class='msg-erro msg-status'></span>
 							</div>
+
+						</div>		
+
+							
 						
 						<!-- Fim Dados Funcionario -->
 
@@ -720,6 +754,6 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 			</script>
 	
 	
-	<!-- <script type="text/javascript" src="js/custom.js"></script> -->
+	<script type="text/javascript" src="./js/custom.js"></script>
 </body>
 </html>
