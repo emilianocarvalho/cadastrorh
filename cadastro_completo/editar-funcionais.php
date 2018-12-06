@@ -27,9 +27,6 @@
                 </select>
                 <span class='msg-erro msg-forma_admissao'></span>
             </div>
-        </div>
-        <div class="form-row">
-
             <div class="form-group col-md-2">
                 <label for="regime">Regime</label>
                 <select class="form-control" name="regime" id="regime">
@@ -46,6 +43,11 @@
                 <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
                 <span class='msg-erro msg-setor'></span>
             </div>
+        </div>
+
+
+        <div class="form-row">  
+            
 
             <div class="form-group col-md-2">
                 <label for="data_nascimento">Data de Nascimento</label>
@@ -61,14 +63,15 @@
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-1">
                 <label for="sexo">Sexo</label>
                 <select class="form-control" name="sexo" id="sexo">
                     <option value="<?= $cliente->sexo ?>">
                         <?= $cliente->sexo ?>
                     </option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">M</option>
+                    <option value="Feminino">F</option>
+                    <option value="Outros">O</option>
                 </select>
                 <span class='msg-erro msg-sexo'></span>
             </div>

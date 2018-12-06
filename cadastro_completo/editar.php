@@ -158,7 +158,7 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
 
                                         <label for="nome">Alterar Foto</label>
                                         <div class="col-md-2">
@@ -170,7 +170,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <?php include("editar-pessoal.php"); ?>
                                     </div>
                                     
