@@ -155,54 +155,54 @@
                         <?php else : ?>
 
                             <form class="form-api needs-validation" action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
-
+                                                                
                                 <div class="row">
-
-                                    <div class="col-md-4">
-
-                                        <label for="nome">Alterar Foto</label>
-                                        <div class="col-md-2">
-                                            <a href="#" class="thumbnail">
-                                            <img src="fotos/<?= $cliente->foto ?>" height="190" width="150" id="foto-cliente">
-                                            </a>
-                                        </div>
-                                        <input type="file" name="foto" id="foto" value="foto">
-
+                                    <label for="nome">Alterar Foto</label>
+                                    <div class="col-md-2">
+                                        <a href="#" class="thumbnail">
+                                        <img src="fotos/<?= $cliente->foto ?>" height="190" width="150" id="foto-cliente">
+                                        </a>
                                     </div>
+                                    <input type="file" name="foto" id="foto" value="foto">
+                                </div>                                    
 
-                                    <div class="col-md-6">
+                                <!-- TABS -->
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pessoais-tab" data-toggle="tab" href="#pessoais" role="tab" aria-controls="pessoais" aria-selected="true">PESSOAIS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="cadastrais-tab" data-toggle="tab" href="#cadastrais" role="tab" aria-controls="cadastrais" aria-selected="false">CADASTRAIS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="funcionais-tab" data-toggle="tab" href="#funcionais" role="tab" aria-controls="funcionais" aria-selected="false">FUNCIONAIS</a>
+                                    </li>
+                                </ul>
+                                
+                                <!-- CONTEUDO TABS -->
+                                <div class="tab-content" id="myTabContent">
+
+                                    <div class="tab-pane fade show active" id="pessoais" role="tabpanel" aria-labelledby="pessoais-tab">
                                         <?php include("editar-pessoal.php"); ?>
                                     </div>
-                                    
-                                    <div class="col-md-2">
-                                        <p>BOTÕES</p>    
-                                        <input type="hidden" name="acao" value="editar">
-                                        <input type="hidden" name="id" value="<?= $cliente->id ?>">
-                                        <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
-                                        <button type="submit" class="btn btn-primary" id='botao'>
-                                            Gravar
-                                        </button>
-                                        <a href='../painel.php' class="btn btn-danger">Cancelar</a>
-                                    </div>
 
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    <hr>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-
-                                    <div class="col-md-6">
+                                    <div class="tab-pane fade" id="cadastrais" role="tabpanel" aria-labelledby="cadastrais-tab">   
                                         <?php include("editar-cadastrais.php"); ?>
                                     </div>
-                                    <div class="col-md-6">
+
+                                    <div class="tab-pane fade" id="funcionais" role="tabpanel" aria-labelledby="funcionais-tab">
                                         <?php include("editar-funcionais.php"); ?>
                                     </div>
+
                                 </div>
 
+                                <input type="hidden" name="acao" value="editar">
+                                <input type="hidden" name="id" value="<?= $cliente->id ?>">
+                                <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
+                                <button type="submit" class="btn btn-primary" id='botao'>
+                                    Gravar
+                                </button>
+                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>
                             </form>
 
                      <?php endif; ?>
