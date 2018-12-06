@@ -376,8 +376,6 @@
                                     </div>
 
 
-
-
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                         <div class="form-row">
 
@@ -420,7 +418,7 @@
                                                 </select>
                                                 <span class='msg-erro msg-regime'></span>
                                             </div>
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-2">
                                                 <label for="setor">Setor</label>
                                                 <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
                                                 <span class='msg-erro msg-setor'></span>
@@ -567,7 +565,7 @@
                                                     <input type="naturalidade" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
                                                     <span class='msg-erro msg-naturalidade'></span>
                                             </div>
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-2">
                                                 <label for="estado">Estado</label>
                                                     <select class="form-control" name="estado" id="estado">
                                                         <option value="<?= $cliente->estado ?>">
