@@ -19,10 +19,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="form-row">
 
             <div class="form-group col-md-4">
@@ -72,4 +68,7 @@
                 <span class="msg-erro msg-matricula"></span>
             </div>
         </div>
+
+        
+
 

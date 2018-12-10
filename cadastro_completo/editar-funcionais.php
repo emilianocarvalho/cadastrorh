@@ -2,7 +2,7 @@
         <span class="badge badge-danger">==>> SESSÃO FUNCIONAIS</span>
         <div class="form-row">
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="cargo">Cargo</label>
                 <input type="cargo" class="form-control" name="cargo" id="cargo" value="<?= $cliente->cargo ?>" placeholder="Informe o Cargo">
                 <span class='msg-erro msg-cargo'></span>
@@ -13,8 +13,28 @@
                 <input type="funcao" class="form-control" name="funcao" id="funcao" value="<?= $cliente->funcao ?>" placeholder="Informe a Função">
                 <span class='msg-erro msg-funcao'></span>
             </div>
-
             <div class="form-group col-md-2">
+                <label for="setor">Setor</label>
+                <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
+                <span class='msg-erro msg-setor'></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="regime">Regime</label>
+                <select class="form-control" name="regime" id="regime">
+                    <option value="<?= $cliente->regime ?>">
+                        <?= $cliente->regime ?>
+                    </option>
+                    <option value="Estatuario">Estatutário</option>
+                    <option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
+                </select>
+                <span class='msg-erro msg-regime'></span>
+            </div>
+
+        </div>
+
+
+        <div class="form-row">  
+            <div class="form-group col-md-4">
                 <label for="forma_admissao">Forma de Admissão</label>
                 <select class="form-control" name="forma_admissao" id="forma_admissao">
                     <option value="<?= $cliente->forma_admissao ?>">
@@ -27,35 +47,14 @@
                 </select>
                 <span class='msg-erro msg-forma_admissao'></span>
             </div>
-            <div class="form-group col-md-2">
-                <label for="regime">Regime</label>
-                <select class="form-control" name="regime" id="regime">
-                    <option value="<?= $cliente->regime ?>">
-                        <?= $cliente->regime ?>
-                    </option>
-                    <option value="Estatuario">Estatutário</option>
-                    <option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
-                </select>
-                <span class='msg-erro msg-regime'></span>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="setor">Setor</label>
-                <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
-                <span class='msg-erro msg-setor'></span>
-            </div>
-        </div>
 
-
-        <div class="form-row">  
-            
-
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="data_nascimento">Data de Nascimento</label>
                 <input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
                 <span class='msg-erro msg-data'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="data_admissao">Data de Admissão</label>
                 <input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
                 <span class='msg-erro msg-data2'></span>
@@ -63,20 +62,7 @@
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-1">
-                <label for="sexo">Sexo</label>
-                <select class="form-control" name="sexo" id="sexo">
-                    <option value="<?= $cliente->sexo ?>">
-                        <?= $cliente->sexo ?>
-                    </option>
-                    <option value="Masculino">M</option>
-                    <option value="Feminino">F</option>
-                    <option value="Outros">O</option>
-                </select>
-                <span class='msg-erro msg-sexo'></span>
-            </div>
-
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <label for="nacionalidade">Nacionalidade</label>
                 <select class="form-control" name="nacionalidade" id="nacionalidade">
                     <option value="<?= $cliente->nacionalidade ?>">
@@ -186,12 +172,12 @@
                 </select>
                 <span class='msg-erro msg-nacionalidade'></span>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                     <label for="naturalidade">Naturalidade</label>
                     <input type="naturalidade" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
                     <span class='msg-erro msg-naturalidade'></span>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="estado">Estado</label>
                     <select class="form-control" name="estado" id="estado">
                         <option value="<?= $cliente->estado ?>">
@@ -228,6 +214,21 @@
             </div>
         </div>
         <div class="form-row">
+
+            <div class="form-group col-md-4">
+                <label for="sexo">Sexo</label>
+                <select class="form-control" name="sexo" id="sexo">
+                    <option value="<?= $cliente->sexo ?>">
+                        <?= $cliente->sexo ?>
+                    </option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <span class='msg-erro msg-sexo'></span>
+            </div>
+
+
             <div class="form-group col-md-6">
                 <label for="estado_civil">Estado Civil</label>
                 <select class="form-control" name="estado_civil" id="estado_civil">
@@ -245,25 +246,25 @@
             </div>
 
             <div class="form-group col-md-2">
-                <label for="numero_dependente">Número de Dependente(s)</label>
+                <label for="numero_dependente">Dependente(s)</label>
                 <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
                 <span class='msg-erro msg-numero_dependente'></span>
             </div>
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="telefone">Telefone</label>
                 <input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
                 <span class='msg-erro msg-telefone'></span>
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="celular">Celular</label>
                 <input type="celular" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
                 <span class='msg-erro msg-celular'></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="whatsapp">Whatsapp</label>
                 <input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" value="<?= $cliente->whatsapp ?>" placeholder="Informe o Whatsapp">
                 <span class='msg-erro msg-whatsapp'></span>
@@ -283,14 +284,13 @@
                 <span class='msg-erro msg-agencia'></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-5">
                 <label for="conta_corrente">Conta Corrente</label>
                 <input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
                 <span class='msg-erro msg-conta_corrente'></span>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-8">
+
+            <div class="form-group col-md-2">
                 <label for="status">Status</label>
                 <select class="form-control" name="status" id="status">
                     <option value="<?= $cliente->status ?>">
@@ -302,3 +302,4 @@
                 <span class='msg-erro msg-status'></span>
             </div>
         </div>
+        

@@ -145,10 +145,24 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 								<input type="file" name="foto" id="foto" value="foto" >
 							</div>
 
-							<div class="col-md-6">
+							<div class="col-md-8">
                 <?php include("editar-pessoal.php"); ?>
 							</div>
+
+              <div class="col-md-2">               
+                  <input type="hidden" name="acao" value="incluir">
+                  <button type="submit" class="btn btn-primary" id='botao'> 
+                  Gravar
+                  </button>
+                  <a href='../painel.php' class="btn btn-danger">Cancelar</a>
+              </div>
 						</div>
+
+            <div class="row">
+               <div class="col-md-12">
+                 <hr>
+               </div>
+            </div>
 
             <div class="row">
                <div class="col-md-6">
@@ -159,7 +173,6 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
                 <?php include("editar-funcionais.php"); ?>
 							</div>
             </Div>
-
 					</form>
 				<!-- Fim Formulário -->
 
@@ -168,14 +181,10 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 				<!-- </div> Div do formulario edit-cont -->
       
 			 </div>
-
     </div>
-
-
 					</main>
 				</div>
 			</div>
-	
 	
 			<!-- Bootstrap core JavaScript
 			================================================== -->
@@ -222,7 +231,6 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 					}
 				});
 			</script>
-	
 	
 	<script type="text/javascript" src="./js/custom.js"></script>
 </body>
