@@ -2,7 +2,7 @@
         <span class="badge badge-danger">==>> SESSÃO FUNCIONAIS</span>
         <div class="form-row">
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label for="cargo">Cargo</label>
                 <input type="cargo" class="form-control" name="cargo" id="cargo" value="<?= $cliente->cargo ?>" placeholder="Informe o Cargo">
                 <span class='msg-erro msg-cargo'></span>
@@ -14,7 +14,7 @@
                 <span class='msg-erro msg-funcao'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="forma_admissao">Forma de Admissão</label>
                 <select class="form-control" name="forma_admissao" id="forma_admissao">
                     <option value="<?= $cliente->forma_admissao ?>">
@@ -44,18 +44,14 @@
                 <span class='msg-erro msg-setor'></span>
             </div>
         </div>
-
-
         <div class="form-row">  
-            
-
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <label for="data_nascimento">Data de Nascimento</label>
                 <input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
                 <span class='msg-erro msg-data'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <label for="data_admissao">Data de Admissão</label>
                 <input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
                 <span class='msg-erro msg-data2'></span>
@@ -226,9 +222,7 @@
                     </select>
                 <span class='msg-erro msg-estado'></span>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-2">
                 <label for="estado_civil">Estado Civil</label>
                 <select class="form-control" name="estado_civil" id="estado_civil">
                     <option value="<?= $cliente->estado_civil ?>">
@@ -243,27 +237,27 @@
                 </select>
                 <span class='msg-erro msg-estado_civil'></span>
             </div>
-
-            <div class="form-group col-md-2">
-                <label for="numero_dependente">Número de Dependente(s)</label>
+            <div class="form-group col-md-3">
+                <label for="numero_dependente">Nº Dependente(s)</label>
                 <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
                 <span class='msg-erro msg-numero_dependente'></span>
             </div>
+
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="telefone">Telefone</label>
                 <input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
                 <span class='msg-erro msg-telefone'></span>
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="celular">Celular</label>
                 <input type="celular" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
                 <span class='msg-erro msg-celular'></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="whatsapp">Whatsapp</label>
                 <input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" value="<?= $cliente->whatsapp ?>" placeholder="Informe o Whatsapp">
                 <span class='msg-erro msg-whatsapp'></span>
@@ -271,26 +265,26 @@
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="banco">Banco</label>
                 <input type="banco" class="form-control" id="banco" name="banco" value="<?= $cliente->banco ?>" style="text-transform:uppercase;" placeholder="Informe o Banco">
                 <span class='msg-erro msg-banco'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="agencia">Agencia</label>
                 <input type="agencia" class="form-control" id="agencia" maxlength="20" name="agencia" value="<?= $cliente->agencia ?>" placeholder="Informe a Agência">
                 <span class='msg-erro msg-agencia'></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="conta_corrente">Conta Corrente</label>
                 <input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
                 <span class='msg-erro msg-conta_corrente'></span>
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-8">
+        <div class="form-group col-md-6">
                 <label for="status">Status</label>
                 <select class="form-control" name="status" id="status">
                     <option value="<?= $cliente->status ?>">
@@ -299,6 +293,6 @@
                     <option value="Ativo">Ativo</option>
                     <option value="Inativo">Inativo</option>
                 </select>
-                <span class='msg-erro msg-status'></span>
-            </div>
+                <span class='msg-erro msg-status'></span> 
+            </div>    
         </div>

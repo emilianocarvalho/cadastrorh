@@ -1,4 +1,25 @@
+/* *,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1.5rem;
+  font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+  color: #5a5a5a;
+} */
+
+
 fieldset{margin:1% auto;}
 table{ margin-top: 20px;}	
 .box-mensagem-crud{ margin-top: 10px;}
 .msg-erro{ color: red; }
+
+/* File input */
+.file {
+  margin-top: 10px;
+}

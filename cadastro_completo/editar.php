@@ -7,7 +7,7 @@
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./css/custom.css"> 
-
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css">
 </head>
 
 <?php
@@ -160,13 +160,25 @@
 
                                     <div class="col-md-2">
 
-                                        <label for="nome">Alterar Foto</label>
-                                        <div class="col-md-2">
+                                        <!-- <div class="container"> -->
+                                        
+                                            <img class='img-thumbnail' src="fotos/<?= $cliente->foto ?>" height="250" width="230" id="foto-cliente">
+                                        <!-- </div> -->
+
+                                        <!-- <div class="col-md-2">
                                             <a href="#" class="thumbnail">
                                             <img src="fotos/<?= $cliente->foto ?>" height="190" width="150" id="foto-cliente">
                                             </a>
+                                        </div> -->
+                                        <!-- <input type="file" name="foto" id="foto" value="foto"> -->
+                                        <!-- <label class="file">
+                                            <input type="file" name="foto" id="foto" aria-label="File browser example">
+                                            <span class="file-custom">Escolha o arquivo</span>
+                                        </label> -->
+                                        <div class="file">
+                                            <input type="file" class="custom-file-input" id="foto" name="foto" >
+                                            <label class="custom-file-label" for="foto">Escolha o arquivo</label>                                            
                                         </div>
-                                        <input type="file" name="foto" id="foto" value="foto">
 
                                     </div>
 
@@ -175,16 +187,17 @@
                                     </div>
                                     
                                     <div class="col-md-2">
-                                        <p>BOTÕES</p>    
-                                        <input type="hidden" name="acao" value="editar">
-                                        <input type="hidden" name="id" value="<?= $cliente->id ?>">
-                                        <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
-                                        <button type="submit" class="btn btn-primary" id='botao'>
-                                            Gravar
-                                        </button>
-                                        <a href='../painel.php' class="btn btn-danger">Cancelar</a>
+                                        <div class="row"> 
+                                            <div class="col-md-12">    
+                                                <input type="hidden" name="acao" value="editar">
+                                                <input type="hidden" name="id" value="<?= $cliente->id ?>">
+                                                <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
+                                                <button type="submit" class="btn btn-primary" id='botao'>Gravar</button>
+                                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>                                            
+                                            </div>
+                                        </div>
                                     </div>
-
+                                   
                                 </div>
 
                                 <div class="row">
@@ -221,7 +234,7 @@
             </script>
             <script src="../assets/js/vendor/popper.min.js"></script>
             <script src="../dist/js/bootstrap.min.js"></script>
-
+            <script type="text/javascript" src="js/custom.js"></script>
             <!-- Icons -->
             <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
             <script>

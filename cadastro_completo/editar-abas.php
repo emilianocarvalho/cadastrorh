@@ -203,6 +203,7 @@
                                     Gravar
                                 </button>
                                 <a href='../painel.php' class="btn btn-danger">Cancelar</a>
+                                
                             </form>
 
                      <?php endif; ?>
