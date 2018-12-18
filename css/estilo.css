@@ -1,0 +1,8 @@
+body {
+  background: url("Pasta pessoal/Documentos/Desenvolvimento/cadastrorh/cadastrorh/imagens/backgroud.jpg")
+    no-repeat center center fixed;
+  -vebkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}

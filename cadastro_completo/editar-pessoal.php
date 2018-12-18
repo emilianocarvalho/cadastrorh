@@ -1,6 +1,6 @@
 
-        <span class="badge badge-danger">==>> SESSÃO </span>
-
+        <b><h4 class="text-black-50">DADOS PESSOAIS</h4></b>
+        <hr>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="nome">Nome</label>
@@ -19,9 +19,6 @@
                 <span class='msg-erro msg-mae'></span>
             </div>
         </div>
-
-
-
 
 
         <div class="form-row">

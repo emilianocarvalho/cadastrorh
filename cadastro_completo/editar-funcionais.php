@@ -1,5 +1,6 @@
 
-        <span class="badge badge-danger">==>> SESSÃO FUNCIONAIS</span>
+        <b><span class="text-black-50">DADOS FUNCIONAIS</span></b>
+        <hr>
         <div class="form-row">
 
             <div class="form-group col-md-2">
@@ -296,3 +297,4 @@
                 <span class='msg-erro msg-status'></span> 
             </div>    
         </div>
+    

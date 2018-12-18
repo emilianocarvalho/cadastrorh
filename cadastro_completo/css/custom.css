@@ -23,3 +23,10 @@ table{ margin-top: 20px;}
 .file {
   margin-top: 10px;
 }
+
+.file input {
+  min-width: 10rem;
+}
+.file input:hover {
+  cursor: pointer;
+}

@@ -6,8 +6,9 @@
     <title>Procon PB - SI (Sistemas Internos)</title>
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/dashboard.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="./css/custom.css"> 
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css"> 
+    
 </head>
 
 <?php
@@ -58,6 +59,7 @@
 ?>
 
     <body>
+    background-color: #0000FF;
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Procon PB  SI - CADASTRO DE SERVIDOR</a>
             <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
@@ -160,24 +162,11 @@
 
                                     <div class="col-md-2">
 
-                                        <!-- <div class="container"> -->
+                                        <img class="img-thumbnail d-block" src="fotos/<?= $cliente->foto ?>" id="foto-cliente">
                                         
-                                            <img class='img-thumbnail' src="fotos/<?= $cliente->foto ?>" height="250" width="230" id="foto-cliente">
-                                        <!-- </div> -->
-
-                                        <!-- <div class="col-md-2">
-                                            <a href="#" class="thumbnail">
-                                            <img src="fotos/<?= $cliente->foto ?>" height="190" width="150" id="foto-cliente">
-                                            </a>
-                                        </div> -->
-                                        <!-- <input type="file" name="foto" id="foto" value="foto"> -->
-                                        <!-- <label class="file">
-                                            <input type="file" name="foto" id="foto" aria-label="File browser example">
-                                            <span class="file-custom">Escolha o arquivo</span>
-                                        </label> -->
                                         <div class="file">
                                             <input type="file" class="custom-file-input" id="foto" name="foto" >
-                                            <label class="custom-file-label" for="foto">Escolha o arquivo</label>                                            
+                                            <label class="custom-file-label" for="foto">Selecionar...</label>                                            
                                         </div>
 
                                     </div>
