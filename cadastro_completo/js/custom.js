@@ -118,7 +118,6 @@ function validaCadastro(evt){
 	var mae  = document.getElementById('mae');
 	var rua  = document.getElementById('rua');
 	var numero = document.getElementById('numero');
-	var whatsapp = document.getElementById('whatsapp');
 	var complemento = document.getElementById('complemento');
 	var cep = document.getElementById('cep');
 	var bairro = document.getElementById('bairro');
@@ -157,6 +156,7 @@ function validaCadastro(evt){
 	var numero_dependente = document.getElementById('numero_dependente');
 	var telefone = document.getElementById('telefone');
 	var celular = document.getElementById('celular');
+	var whatsapp = document.getElementById('whatsapp');
 	var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var contErro = 0;
 
