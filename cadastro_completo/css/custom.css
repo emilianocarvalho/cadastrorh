@@ -19,6 +19,7 @@ table{ margin-top: 20px;}
 .box-mensagem-crud{ margin-top: 10px;}
 .msg-erro{ color: red; }
 
+
 /* File input */
 .file {
   margin-top: 10px;
@@ -29,4 +30,5 @@ table{ margin-top: 20px;}
 }
 .file input:hover {
   cursor: pointer;
+
 }
