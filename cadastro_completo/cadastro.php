@@ -157,6 +157,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
                   Gravar
                   </button>
                   <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>
+
               </div>
             </div>
 

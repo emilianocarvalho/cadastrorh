@@ -128,12 +128,6 @@
 		$mensagem .= '<li>Favor preencher a RG.<li>';
 	endif;
 
-	if ($titulo == '') :
-		$mensagem .= '<li>Favor preencher o Whatsapp.<li>';
-	elseif (strlen($titulo) < 12) :
-		$mensagem .= '<li>Formato do Whatsapp inválido.<li>';
-	endif;
-
 	if ($zona == '' || strlen($zona) < 1) :
 		$mensagem .= '<li>Favor preencher a Zona.<li>';
 	endif;
@@ -264,6 +258,11 @@
 		$mensagem .= '<li>Formato do Celular inválido.</li>';
 	endif;
 
+	if ($whatsapp == '') :
+		$mensagem .= '<li>Favor preencher o Whatsapp.<li>';
+	elseif (strlen($whatsapp) < 11) :
+		$mensagem .= '<li>Formato do Whatsapp inválido.<li>';
+	endif;
 			// if ($whatsapp == ''):
 			// 	$mensagem .= '<li>Favor preencher o Whatsapp.<li>';
 			// elseif(strlen($whatsapp) < 11):
