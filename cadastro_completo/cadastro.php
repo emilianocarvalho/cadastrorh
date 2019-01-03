@@ -5,8 +5,9 @@
 	<title>Procon PB - SI (Sistemas Internos)</title>
 
 	<link href="../dist/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="../assets/css/dashboard.css" rel="stylesheet" />
-	<link href="./css/custom.css" rel="stylesheet" />
+  <link href="../assets/css/dashboard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css">
+  <link rel="stylesheet" type="text/css" href="./css/custom.css">
 	
 </head>
 
@@ -134,20 +135,21 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
           </div>
 
 				<!-- Inicio Formulário -->
-					<form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
-						
-						<div class="row">
-							<div class="col-md-2">
-								<label for="nome">Selecionar Foto</label>
-									<a href="#" class="thumbnail">
-									<img src="fotos/padrao.jpg" height="190" width="150" id="foto-cliente">
-									</a>
-								<input type="file" name="foto" id="foto" value="foto" >
-							</div>
+        <form class="form-api needs-validation" action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 
-							<div class="col-md-8">
+          <div class="row">
+            <div class="col-md-2">
+              <img class="img-thumbnail d-block" src="fotos/padrao.jpg" id="foto-cliente">
+                  
+                <div class="file">
+                    <input type="file" class="custom-file-input" id="foto" name="foto" >
+                    <label class="custom-file-label" for="foto">Selecionar...</label>                                            
+                </div>
+
+            </div>
+              <div class="col-md-8">
                 <?php include("editar-pessoal.php"); ?>
-							</div>
+              </div>
 
               <div class="col-md-2">               
                   <input type="hidden" name="acao" value="incluir">
@@ -156,24 +158,24 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
                   </button>
                   <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>
               </div>
-						</div>
-
-            <div class="row">
-               <div class="col-md-12">
-                 <hr>
-               </div>
             </div>
 
             <div class="row">
-               <div class="col-md-6">
-                <?php include("editar-cadastrais.php"); ?>
-							</div>
+                <div class="col-md-12">
+                  <hr>
+                </div>
+            </div>
 
-              <div class="col-md-6">
-                <?php include("editar-funcionais.php"); ?>
-							</div>
-            </Div>
-					</form>
+            <div class="row">
+                <div class="col-md-6">
+                <?php include("editar-cadastrais.php"); ?>
+              </div>
+
+            <div class="col-md-6">
+              <?php include("editar-funcionais.php"); ?>
+            </div>
+          </div>
+        </form>
 				<!-- Fim Formulário -->
 
 				</div>
@@ -192,7 +194,8 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 			<script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 			<script src="../assets/js/vendor/popper.min.js"></script>
-			<script src="../dist/js/bootstrap.min.js"></script>
+      <script src="../dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/custom.js"></script>
 	
 			<!-- Icons -->
 			<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -232,6 +235,5 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 				});
 			</script>
 	
-	<script type="text/javascript" src="./js/custom.js"></script>
 </body>
 </html>

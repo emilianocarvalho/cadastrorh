@@ -213,7 +213,6 @@
             </div>
             </div>
 
-            <!-- <script type="text/javascript" src="js/custom.js"></script> -->
             <!-- Bootstrap core JavaScript
     ================================================== -->
             <!-- Placed at the end of the document so the pages load faster -->
