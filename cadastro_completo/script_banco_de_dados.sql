@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS db_blog;
+CREATE DATABASE IF NOT EXISTS cadastro;
 
-USE db_blog;
+USE cadastro;
 
 CREATE TABLE tab_clientes(
 	id integer auto_increment primary key,
@@ -37,18 +37,18 @@ CREATE TABLE tab_clientes(
 	celular varchar(20),
 	whatsapp varchar(20),
 	data_nascimento date,
-	data_admissao data,
+	data_admissao date,
 	sexo varchar(10),
 	nacionalidade varchar(33),
 	naturalidade varchar(20),
 	estado varchar(20),
-	estado_civil(10),
+	estado_civil varchar(10),
 	numero_dependente int(20),
 	banco varchar(50),
 	agencia varchar(20),
 	conta_corrente varchar(20),
 	status varchar(10),
     foto varchar(200),
-	data_cadastro timestamp default CURRENT_TIMESTAMP,
-	data_alteracao timestamp
+	data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+	data_alteracao timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

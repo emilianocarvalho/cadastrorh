@@ -1,5 +1,7 @@
 
-        <span class="badge badge-danger">==>> SESSÃO </span>
+        <b><h5 class="text-black-50">DADOS PESSOAIS</h5></b>
+        <hr>
+
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="nome">Nome</label>
@@ -18,6 +20,7 @@
                 <span class='msg-erro msg-mae'></span>
             </div>
         </div>
+
 
         <div class="form-row">
 
@@ -68,7 +71,4 @@
                 <span class="msg-erro msg-matricula"></span>
             </div>
         </div>
-
-        
-
 

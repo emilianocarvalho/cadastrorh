@@ -6,9 +6,8 @@
     <title>Procon PB - SI (Sistemas Internos)</title>
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/dashboard.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css">
     <link rel="stylesheet" type="text/css" href="./css/custom.css"> 
-    
+
 </head>
 
 <?php
@@ -59,7 +58,6 @@
 ?>
 
     <body>
-    background-color: #0000FF;
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Procon PB  SI - CADASTRO DE SERVIDOR</a>
             <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
@@ -157,54 +155,55 @@
                         <?php else : ?>
 
                             <form class="form-api needs-validation" action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
-
+                                                                
                                 <div class="row">
-
+                                    <label for="nome">Alterar Foto</label>
                                     <div class="col-md-2">
-
-                                        <img class="img-thumbnail d-block" src="fotos/<?= $cliente->foto ?>" id="foto-cliente">
-                                        
-                                        <div class="file">
-                                            <input type="file" class="custom-file-input" id="foto" name="foto" >
-                                            <label class="custom-file-label" for="foto">Selecionar...</label>                                            
-                                        </div>
-
+                                        <a href="#" class="thumbnail">
+                                        <img src="fotos/<?= $cliente->foto ?>" height="190" width="150" id="foto-cliente">
+                                        </a>
                                     </div>
+                                    <input type="file" name="foto" id="foto" value="foto">
+                                </div>                                    
 
-                                    <div class="col-md-8">
+                                <!-- TABS -->
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pessoais-tab" data-toggle="tab" href="#pessoais" role="tab" aria-controls="pessoais" aria-selected="true">PESSOAIS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="cadastrais-tab" data-toggle="tab" href="#cadastrais" role="tab" aria-controls="cadastrais" aria-selected="false">CADASTRAIS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="funcionais-tab" data-toggle="tab" href="#funcionais" role="tab" aria-controls="funcionais" aria-selected="false">FUNCIONAIS</a>
+                                    </li>
+                                </ul>
+                                
+                                <!-- CONTEUDO TABS -->
+                                <div class="tab-content" id="myTabContent">
+
+                                    <div class="tab-pane fade show active" id="pessoais" role="tabpanel" aria-labelledby="pessoais-tab">
                                         <?php include("editar-pessoal.php"); ?>
                                     </div>
-                                    
-                                    <div class="col-md-2">
-                                        <div class="row"> 
-                                            <div class="col-md-12">    
-                                                <input type="hidden" name="acao" value="editar">
-                                                <input type="hidden" name="id" value="<?= $cliente->id ?>">
-                                                <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
-                                                <button type="submit" class="btn btn-primary" id='botao'>Gravar</button>
-                                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    <hr>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-
-                                    <div class="col-md-6">
+                                    <div class="tab-pane fade" id="cadastrais" role="tabpanel" aria-labelledby="cadastrais-tab">   
                                         <?php include("editar-cadastrais.php"); ?>
                                     </div>
-                                    <div class="col-md-6">
+
+                                    <div class="tab-pane fade" id="funcionais" role="tabpanel" aria-labelledby="funcionais-tab">
                                         <?php include("editar-funcionais.php"); ?>
                                     </div>
+
                                 </div>
 
+                                <input type="hidden" name="acao" value="editar">
+                                <input type="hidden" name="id" value="<?= $cliente->id ?>">
+                                <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
+                                <button type="submit" class="btn btn-primary" id='botao'>
+                                    Gravar
+                                </button>
+                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>
+                                
                             </form>
 
                      <?php endif; ?>
@@ -212,8 +211,9 @@
                 </main>
             </div>
             </div>
-            <!-- Bootstrap core JavaScript
 
+            <!-- <script type="text/javascript" src="js/custom.js"></script> -->
+            <!-- Bootstrap core JavaScript
     ================================================== -->
             <!-- Placed at the end of the document so the pages load faster -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -222,7 +222,7 @@
             </script>
             <script src="../assets/js/vendor/popper.min.js"></script>
             <script src="../dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="js/custom.js"></script>
+
             <!-- Icons -->
             <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
             <script>
@@ -262,6 +262,5 @@
             </script>
 
     </body>
-
 
 </html>
