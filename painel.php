@@ -170,9 +170,9 @@
           <br>
             <div class="row">
             <div class="col">          
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-            <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-            <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
+            <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+            <a href='painel.php' class="btn btn-outline-primary">Ver Todos</a>
+            <a href='./cadastro_completo/cadastro.php' class="btn btn-outline-success">Cadastrar Servidores</a>
           </div>
           </div>
           </form>
@@ -207,8 +207,8 @@
       <td><?= $cliente->celular ?></td>
       <td><?= $cliente->status ?></td>
       <td>
-        <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-primary">Editar</a>															
-        <a href='javascript:void(0)' class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
+        <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-outline-primary">Editar</a>															
+        <a href='javascript:void(0)' class="btn btn-outline-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
       </td>
     </tr>	
   <?php endforeach; ?>
@@ -220,7 +220,7 @@
 <?php endif; ?>
 
 <p style="text-align:center;">
-<a href="logout.php"><input type="submit" class="sb bradius" value="sair" /></a>
+<a href="index.php"><input type="submit" class="sb bradius btn btn-outline-dark" value="Sair" /></a>
 </p>
     <!-- </table> -->
           </div>

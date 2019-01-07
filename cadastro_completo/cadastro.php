@@ -132,17 +132,19 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
               	</button>
             </div>
           </div>
-
+          
 				<!-- Inicio Formulário -->
 					<form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 						
 						<div class="row">
-							<div class="col-md-2">
-								<label for="nome">Selecionar Foto</label>
-									<a href="#" class="thumbnail">
-									<img src="fotos/padrao.jpg" height="190" width="150" id="foto-cliente">
-									</a>
-								<input type="file" name="foto" id="foto" value="foto" >
+							
+              <div class="col-md-2">
+              <img class="img-thumbnail d-block" src="fotos/<?= $cliente->foto ?>" height="200" width="280" id="foto-cliente">
+                                        
+                    <div class="file">
+                      <input type="file" class="custom-file-input" id="foto" name="foto" >
+                      <label class="custom-file-label" for="foto">Selecionar...</label>                                            
+                    </div>
 							</div>
 
 							<div class="col-md-8">
@@ -151,10 +153,10 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 
               <div class="col-md-2">               
                   <input type="hidden" name="acao" value="incluir">
-                  <button type="submit" class="btn btn-primary" id='botao'> 
+                  <button type="submit" class="btn btn-outline-success" id='botao'> 
                   Gravar
                   </button>
-                  <a href='../painel.php' class="btn btn-danger">Cancelar</a>
+                  <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>
               </div>
 						</div>
 

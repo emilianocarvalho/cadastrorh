@@ -71,10 +71,10 @@
 
                 <div class="form-row">
                   <div class="form-group col-md-8">
-                    <input class="btn btn-lg btn-secondary btn-block" type="submit" value="Entrar" />
+                    <input class="btn btn-lg btn btn-outline-primary btn-block" type="submit" value="Entrar" />
                   </div>
                   <div class="form-group col-md-4">
-                    <a class="btn btn-lg btn-light" href="index.php">Início</a>
+                    <a class="btn btn-lg btn btn-outline-secondary" href="index.php">Início</a>
                   </div>
                 </div>
                 <p class="mt-5 mb-3 text-muted">Procon PB NTI &middot; &copy; 2017-2018</p>
