@@ -136,14 +136,19 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 				<!-- Inicio Formulário -->
 					<form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 						
+            <!-- FOTO -->
 						<div class="row">
-							<div class="col-md-2">
-								<label for="nome">Selecionar Foto</label>
-									<a href="#" class="thumbnail">
-									<img src="fotos/padrao.jpg" height="190" width="150" id="foto-cliente">
-									</a>
-								<input type="file" name="foto" id="foto" value="foto" >
-							</div>
+            <div class="col-md-2">
+
+              <img class="img-thumbnail d-block" src="fotos/<?= $cliente->foto ?>" id="foto-cliente">
+
+              <div class="file">
+                  <input type="file" class="custom-file-input" id="foto" name="foto" >
+                  <label class="custom-file-label" for="foto">Selecionar...</label>                                            
+              </div>
+             
+
+            </div>
 
 							<div class="col-md-8">
                 <?php include("editar-pessoal.php"); ?>
