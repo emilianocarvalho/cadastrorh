@@ -139,7 +139,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 
           <div class="row">
             <div class="col-md-2">
-              <img class="img-thumbnail d-block" src="fotos/padrao.jpg" id="foto-cliente">
+              <img class="img-thumbnail d-block" src="fotos/<?= (empty($cliente->foto)) ? 'padrao.jpg' : $cliente->foto ?>" id="foto-cliente">
                   
                 <div class="file">
                     <input type="file" class="custom-file-input" id="foto" name="foto" >
