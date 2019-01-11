@@ -1,6 +1,8 @@
 
+
         <b><span class="text-black-50">DADOS CADASTRAIS</span></b>
         <hr>
+
         <div class="form-row">
 
             <div class="form-group col-md-6">
