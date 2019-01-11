@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  <!DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> 05a98446833b8e2c10d6fe096b680645d55ad2f7
 <html lang="pt-br">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">

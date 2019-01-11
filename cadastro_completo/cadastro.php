@@ -152,21 +152,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
             </div>
 
 							<div class="col-md-8">
-<!-- =======
-        <form class="form-api needs-validation" action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 
-          <div class="row">
-            <div class="col-md-2">
-              <img class="img-thumbnail d-block" src="fotos/padrao.jpg" id="foto-cliente">
-                  
-                <div class="file">
-                    <input type="file" class="custom-file-input" id="foto" name="foto" >
-                    <label class="custom-file-label" for="foto">Selecionar...</label>                                            
-                </div>
-
-            </div>
-              <div class="col-md-8">
->>>>>>> 8075f13509321e8f06d42f12e10087b21204fc73 -->
                 <?php include("editar-pessoal.php"); ?>
               </div>
 
