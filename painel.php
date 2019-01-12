@@ -67,7 +67,7 @@
       </ul>
     </nav>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
@@ -143,7 +143,7 @@
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> -->
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -161,24 +161,22 @@
           </div>
           
           <form action="" method="get" id='form-contato' class="">
-          <div class="row">
-            <div class="col">          
-            <label class="control-label" for="termo">Pesquisar</label>            
-              <input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
-            </div>
-          </div>
-          <br>
             <div class="row">
-            <div class="col">          
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-            <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-            <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
-          </div>
-          </div>
+              <div class="col">          
+              <label class="control-label" for="termo">Pesquisar</label>            
+                <input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
+              </div>
+            </div>
+            <br>
+              <div class="row">
+              <div class="col">          
+              <button type="submit" class="btn btn-primary">Pesquisar</button>
+              <a href='painel.php' class="btn btn-primary">Ver Todos</a>
+              <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
+            </div>
+            </div>
           </form>
           <!-- </div> -->
-      
-
 
           <!-- <h2>Section title</h2> -->
           <!-- <div class="table-responsive"> -->
@@ -209,6 +207,7 @@
       <td>
         <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-primary">Editar</a>															
         <a href='javascript:void(0)' class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
+        <button id="excluir" class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>" >Excluir</button>
       </td>
     </tr>	
   <?php endforeach; ?>
@@ -230,6 +229,7 @@
     </div>
 
 
+    <script type="text/javascript" src="./cadastro_completo/js/custom.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -237,45 +237,13 @@
     <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="./assets/js/vendor/popper.min.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
+    <!-- <script src="./dist/js/bootstrap.min.js.map"></script> -->
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
-
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
-    </script>
-
 
 		<!-- CÓDIGO ANTERIOR -->
 
@@ -284,6 +252,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
      -->
-     <script type="text/javascript" src="./cadastro_completo/js/custom.js"></script>
 </body>
 </html>

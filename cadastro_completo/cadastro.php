@@ -135,7 +135,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
           </div>
 
 				<!-- Inicio Formulário -->
-        <form class="form-api needs-validation" action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
+        <form class="form-api needs-validation" action="./action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 
           <div class="row">
             <div class="col-md-2">
