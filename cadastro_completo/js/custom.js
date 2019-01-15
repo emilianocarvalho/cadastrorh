@@ -558,9 +558,9 @@ function validaCadastro(evt){
 	/* Validação do campo Whatsapp */
 	caixa_whatsapp = document.querySelector('.msg-whatsapp');
 	if(whatsapp.value == ""){
-		// caixa_whatsapp.innerHTML = "Favor preencher o Whatsapp";
-		// caixa_whatsapp.style.display = 'block';
-		// contErro += 1;
+		caixa_whatsapp.innerHTML = "Favor preencher o Whatsapp";
+		caixa_whatsapp.style.display = 'block';
+		contErro += 1;
 	}else{
 		caixa_whatsapp.style.display = 'none';
 	}
@@ -641,13 +641,7 @@ function confirmaExclusao(id){
 
 	    //Cria um formulário
 		var formulario = document.createElement("form");
-<<<<<<< HEAD
-		alert(formulario.action);
-		formulario.action = "action_cliente.php";
-=======
 			formulario.action = "../../cadastro_completo/action_cliente.php";
->>>>>>> 031635b009cccb053f4cbce31d7c272a1f8625a8
-	    //formulario.action = "action_cliente.php";
 	    formulario.method = "post";
 
 		// Cria os inputs e adiciona ao formulário

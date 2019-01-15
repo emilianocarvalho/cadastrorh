@@ -74,9 +74,9 @@
             <br>
               <div class="row">
               <div class="col">          
-              <button type="submit" class="btn btn-primary">Pesquisar</button>
-              <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-              <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
+              <button type="submit" class="btn btn-outline-danger">Pesquisar</button>
+              <a href='painel.php' class="btn btn-outline-info">Ver Todos</a>
+              <a href='./cadastro_completo/cadastro.php' class="btn btn-outline-success">Cadastrar Servidores</a>
             </div>
             </div>
           </form>
@@ -118,26 +118,21 @@
           <h3 class="text-center text-primary">Não existem Funcionários cadastrados!</h3>
         <?php endif; ?>
 
-        <p style="text-align:center;">
-        <a href="logout.php"><input type="submit" class="sb bradius" value="sair" /></a>
-        </p>
+        
           </div>
           
         </main>
       </div>
     </div>
-
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="./assets/js/vendor/popper.min.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
-    <!-- <script src="./dist/js/bootstrap.min.js.map"></script> -->
 
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
-
+<script type="text/javascript" src="./cadastro_completo/js/custom.js"></script>
 </body>
 </html>
