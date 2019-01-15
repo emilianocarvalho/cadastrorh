@@ -433,10 +433,10 @@
 		mkdir("fotos");
 	endif;  
 			  
-			          // Monta o caminho de destino com o nome do arquivo  
+	// Monta o caminho de destino com o nome do arquivo  
 	$nome_foto = date('dmY') . '_' . $_FILES['foto']['name'];  
 			            
-			          // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino  
+	// Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino  
 	if (!move_uploaded_file($_FILES['foto']['tmp_name'], 'fotos/' . $nome_foto)) :
 		echo "Houve um erro ao gravar arquivo na pasta de destino!";
 	endif;
