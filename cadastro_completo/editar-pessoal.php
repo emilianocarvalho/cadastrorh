@@ -1,5 +1,5 @@
 
-        <b><h5 class="text-black-50">DADOS PESSOAIS</h5></b>
+        <b><h5 class="text-black-50">DADOS PESSOAIS</h5> </b>
         <hr>
 
         <div class="form-row">

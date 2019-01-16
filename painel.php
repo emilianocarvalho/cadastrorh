@@ -20,14 +20,14 @@
     mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
     session_start();
     if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-      header("Location: login.php");
-      exit;
+        header("Location: login.php");
+        exit;
     } else {
-      echo "<center>Você está logado</center>";
+        echo "<center>Você está logado</center>";
     }
 
     // Recebe o termo de pesquisa se existir
-    $termo = (isset($_GET['termo'])) ? $_GET['termo'] : '';
+    $termo = (isset($_POST['termo'])) ? $_POST['termo'] : '';
 
     // Verifica se o termo de pesquisa está vazio, se estiver executa uma consulta completa
     if (empty($termo)) :
@@ -64,7 +64,7 @@
           <?php include("./partials/headercontext.php")  ?>
 
 
-          <form action="" method="get" id='form-contato' class="">
+          <form action="" method="POST" id='form-contato' class="">
             <div class="row">
               <div class="col">          
               <label class="control-label" for="termo">Pesquisar</label>            
