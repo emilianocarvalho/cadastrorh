@@ -57,11 +57,8 @@
     $setor = (isset($_POST['setor'])) ? $_POST['setor'] : '';
     $sexo = (isset($_POST['sexo'])) ? $_POST['sexo'] : '';
     $telefone = (isset($_POST['telefone'])) ? str_replace(array('-', ' '), '', $_POST['telefone']) : '';
-    
     $celular = (isset($_POST['celular'])) ? str_replace(array('-', ' '), '', $_POST['celular']) : '';
-
     $whatsapp = (isset($_POST['whatsapp'])) ? str_replace(array('-', ' '), '', $_POST['whatsapp']) : '';
-
     $banco = (isset($_POST['banco'])) ? $_POST['banco'] : '';
     $agencia = (isset($_POST['agencia'])) ? $_POST['agencia'] : '';
     $conta_corrente = (isset($_POST['conta_corrente'])) ? $_POST['conta_corrente'] : '';
@@ -324,15 +321,19 @@
                  // Verifica se o upload foi enviado via POST
     if (is_uploaded_file($_FILES['foto']['tmp_name'])) :
                          
-                      // Verifica se o diretório de destino existe, senão existir cria o diretório
+    // Verifica se o diretório de destino existe, senão existir cria o diretório
     if (!file_exists("fotos")) :
         mkdir("fotos");
     endif;
               
-                      // Monta o caminho de destino com o nome do arquivo
-    $nome_foto = date('dmY') . '_' . $_FILES['foto']['name'];
-                        
-                      // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino
+    // Monta o caminho de destino com o nome do arquivo e sua extensão
+        $filefotoextensao = $_FILES['foto']['name'];
+        $ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
+
+    $nome_foto = $matricula . "." . $ext;
+
+        
+    // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino
     if (!move_uploaded_file($_FILES['foto']['tmp_name'], 'fotos/' . $nome_foto)) :
         echo "Houve um erro ao gravar arquivo na pasta de destino!";
     endif;
@@ -436,17 +437,20 @@
         mkdir("fotos");
     endif;
               
-                      // Monta o caminho de destino com o nome do arquivo
-    $nome_foto = date('dmY') . '_' . $_FILES['foto']['name'];
-                        
-                      // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino
+    // Monta o caminho de destino com o nome do arquivo e sua extensão
+        $filefotoextensao = $_FILES['foto']['name'];
+        $ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
+
+    $nome_foto = $matricula . "." . $ext;
+              
+    // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino
     if (!move_uploaded_file($_FILES['foto']['tmp_name'], 'fotos/' . $nome_foto)) :
         echo "Houve um erro ao gravar arquivo na pasta de destino!";
     endif;
     endif;
     else :
 
-        $nome_foto = $foto_atual;
+       $nome_foto = $foto_atual;
 
     endif;
 

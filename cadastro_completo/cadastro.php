@@ -40,31 +40,29 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 						
             <!-- FOTO -->
 						<div class="row">
-            <div class="col-md-2">
 
-              <img class="img-thumbnail d-block" src="fotos/<?= (empty($cliente->foto)) ? 'padrao.jpg' : $cliente->foto  ?>" id="foto-cliente">
-
-              <div class="file">
-                  <input type="file" class="custom-file-input" id="foto" name="foto" >
-                  <label class="custom-file-label" for="foto">Selecionar...</label>                                            
-              </div>
-             
-
-            </div>
+							<div class="col-md-2">
+								<img class="img-thumbnail d-block" src="fotos/<?= (empty($cliente->foto)) ? 'padrao.jpg' : $cliente->foto  ?>" id="foto-cliente">
+								
+								<div class="file">
+										<input typea="file" class="custom-file-input" id="foto" name="foto" />
+										<label class="custom-file-label" for="foto">Selecionar...</label>                                            
+								</div>
+							</div>
 
 							<div class="col-md-8">
+							
+								<?php include("editar-pessoal.php"); ?>
+							</div>
 
-                <?php include("editar-pessoal.php"); ?>
-              </div>
-
-              <div class="col-md-2">               
-                  <input type="hidden" name="acao" value="incluir">
-                  <button type="submit" class="btn btn-outline-success" id='botao'> 
-                  Gravar
-                  </button>
-                  <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>
-
-              </div>
+							<div class="col-md-2">               
+									<input type="hidden" name="acao" value="incluir">
+									<button type="submit" class="btn btn-outline-success" id='botao'> 
+									Gravar
+									</button>
+									<a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>
+							</div>
+							
             </div>
 
             <div class="row">

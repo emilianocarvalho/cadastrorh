@@ -25,8 +25,9 @@
     }
 
     // Recebe o id do cliente do cliente via GET
-    if (isset($_GET['id']))
+    if (isset($_GET['id'])) {
         $id_cliente = (isset($_GET['id'])) ? $_GET['id'] : '';
+    }
 
     // Valida se existe um id e se ele é numérico
     if (!empty($id_cliente) && is_numeric($id_cliente)) :

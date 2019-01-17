@@ -67,20 +67,20 @@
         </div>
         <div class="form-row">
 
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-4">
                 <label for="sexo">Sexo</label>
                 <select class="form-control" name="sexo" id="sexo">
                     <option value="<?= $cliente->sexo ?>">
                         <?= $cliente->sexo ?>
                     </option>
-                    <option value="Masculino">M</option>
-                    <option value="Feminino">F</option>
-                    <option value="Outros">O</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                    <option value="O">O</option>
                 </select>
                 <span class='msg-erro msg-sexo'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
 
                 <label for="nacionalidade">Nacionalidade</label>
                 <select class="form-control" name="nacionalidade" id="nacionalidade">
@@ -192,73 +192,75 @@
                 <span class='msg-erro msg-nacionalidade'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
 
                     <label for="naturalidade">Naturalidade</label>
                     <input type="naturalidade" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
                     <span class='msg-erro msg-naturalidade'></span>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-row">
+            
+            <div class="form-group col-md-5">
 
-                <label for="estado">Estado</label>
-                    <select class="form-control" name="estado" id="estado">
-                        <option value="<?= $cliente->estado ?>">
-                            <?= $cliente->estado ?>
+                    <label for="estado">Estado</label>
+                        <select class="form-control" name="estado" id="estado">
+                            <option value="<?= $cliente->estado ?>">
+                                <?= $cliente->estado ?>
+                            </option>
+                            <option value="Amazonas AM">Amazonas (AM)</option>
+                            <option value="Roraima RR">Roraima (RR)</option>
+                            <option value="Amapá AP">Amapá (AP)</option>
+                            <option value="Pará PA">Pará (PA)</option>
+                            <option value="Tocantins TO">Tocantins (TO)</option>
+                            <option value="Rondônia RO">Rondônia (RO)</option>
+                            <option value="Acre AC">Acre (AC)</option>
+                            <option value="Maranhão MA">Maranhão (MA)</option>
+                            <option value="Piauí PI">Piauí (PI)</option>
+                            <option value="Ceará CE">Ceará (CE)</option>
+                            <option value="Rio Grande do Norte RN">Rio Grande do Norte (RN)</option>
+                            <option value="Pernambuco PE">Pernambuco (PE)</option>
+                            <option value="Paraíba PB">Paraíba (PB)</option>
+                            <option value="Sergipe SE">Sergipe (SE)</option>
+                            <option value="Alagoas AL">Alagoas (AL)</option>
+                            <option value="Bahia BA">Bahia (BA)</option>
+                            <option value="Mato Grosso MT">Mato Grosso (MT)</option>
+                            <option value="Mato Grosso do Sul MS">Mato Grosso do Sul (MS)</option>
+                            <option value="Goiás GO">Goiás (GO)</option>
+                            <option value="São Paulo SP">São Paulo (SP)</option>
+                            <option value="Rio de Janeiro RJ">Rio de Janeiro (RJ)</option>
+                            <option value="Espírito Santo ES">Espírito Santo (ES)</option>
+                            <option value="Minas Gerais MG">Minas Gerais (MG)</option>
+                            <option value="Paraná PR">Paraná (PR)</option>
+                            <option value="Rio Grande do Sul RS">Rio Grande do Sul (RS)</option>
+                            <option value="Santa Catarina SC">Santa Catarina (SC)</option>
+                        </select>
+                    <span class='msg-erro msg-estado'></span>
+                </div>
+
+                <div class="form-group col-md-4">
+
+                    <label for="estado_civil">Estado Civil</label>
+                    <select class="form-control" name="estado_civil" id="estado_civil">
+                        <option value="<?= $cliente->estado_civil ?>">
+                            <?= $cliente->estado_civil ?>
                         </option>
-                        <option value="Amazonas AM">Amazonas (AM)</option>
-                        <option value="Roraima RR">Roraima (RR)</option>
-                        <option value="Amapá AP">Amapá (AP)</option>
-                        <option value="Pará PA">Pará (PA)</option>
-                        <option value="Tocantins TO">Tocantins (TO)</option>
-                        <option value="Rondônia RO">Rondônia (RO)</option>
-                        <option value="Acre AC">Acre (AC)</option>
-                        <option value="Maranhão MA">Maranhão (MA)</option>
-                        <option value="Piauí PI">Piauí (PI)</option>
-                        <option value="Ceará CE">Ceará (CE)</option>
-                        <option value="Rio Grande do Norte RN">Rio Grande do Norte (RN)</option>
-                        <option value="Pernambuco PE">Pernambuco (PE)</option>
-                        <option value="Paraíba PB">Paraíba (PB)</option>
-                        <option value="Sergipe SE">Sergipe (SE)</option>
-                        <option value="Alagoas AL">Alagoas (AL)</option>
-                        <option value="Bahia BA">Bahia (BA)</option>
-                        <option value="Mato Grosso MT">Mato Grosso (MT)</option>
-                        <option value="Mato Grosso do Sul MS">Mato Grosso do Sul (MS)</option>
-                        <option value="Goiás GO">Goiás (GO)</option>
-                        <option value="São Paulo SP">São Paulo (SP)</option>
-                        <option value="Rio de Janeiro RJ">Rio de Janeiro (RJ)</option>
-                        <option value="Espírito Santo ES">Espírito Santo (ES)</option>
-                        <option value="Minas Gerais MG">Minas Gerais (MG)</option>
-                        <option value="Paraná PR">Paraná (PR)</option>
-                        <option value="Rio Grande do Sul RS">Rio Grande do Sul (RS)</option>
-                        <option value="Santa Catarina SC">Santa Catarina (SC)</option>
+                        <option value="Casado">Casado(a)</option>
+                        <option value="Divorcio">Divorcio(a)</option>
+                        <option value="Junto">Junto(a)</option>
+                        <option value="Separado">Separado(a)</option>
+                        <option value="Solteiro">Solteiro(a)</option>
+                        <option value="Viuvo">Viuvo(a)</option>
                     </select>
-                <span class='msg-erro msg-estado'></span>
+                    <span class='msg-erro msg-estado_civil'></span>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="numero_dependente">Nº Dependente(s)</label>
+                    <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
+                    <span class='msg-erro msg-numero_dependente'></span>
+                </div>
             </div>
-
-            <div class="form-group col-md-2">
-
-                <label for="estado_civil">Estado Civil</label>
-                <select class="form-control" name="estado_civil" id="estado_civil">
-                    <option value="<?= $cliente->estado_civil ?>">
-                        <?= $cliente->estado_civil ?>
-                    </option>
-                    <option value="Casado">Casado(a)</option>
-                    <option value="Divorcio">Divorcio(a)</option>
-                    <option value="Junto">Junto(a)</option>
-                    <option value="Separado">Separado(a)</option>
-                    <option value="Solteiro">Solteiro(a)</option>
-                    <option value="Viuvo">Viuvo(a)</option>
-                </select>
-                <span class='msg-erro msg-estado_civil'></span>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="numero_dependente">Nº Dependente(s)</label>
-                <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
-                <span class='msg-erro msg-numero_dependente'></span>
-            </div>
-
 
         </div>
         <div class="form-row">

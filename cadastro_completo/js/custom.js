@@ -642,7 +642,6 @@ function confirmaExclusao(id){
 	    //Cria um formulário
 		var formulario = document.createElement("form");
 			formulario.action = "../../cadastro_completo/action_cliente.php";
-	    //formulario.action = "action_cliente.php";
 	    formulario.method = "post";
 
 		// Cria os inputs e adiciona ao formulário

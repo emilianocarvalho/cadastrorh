@@ -91,13 +91,14 @@ carteiratrabalho, reservista, escolar, instituicao, curso, deficiente, nota, car
                                     </div>
                                     
                                     <div class="col-md-2">
+                                    
                                         <div class="row"> 
                                             <div class="col-md-12">    
                                                 <input type="hidden" name="acao" value="editar">
                                                 <input type="hidden" name="id" value="<?= $cliente->id ?>">
                                                 <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
-                                                <button type="submit" class="btn btn-primary" id='botao'>Gravar</button>
-                                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>                                            
+                                                <button type="submit" class="btn btn-outline-success" id='botao'>Gravar</button>
+                                                <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>                                            
                                             </div>
                                         </div>
                                     </div>
