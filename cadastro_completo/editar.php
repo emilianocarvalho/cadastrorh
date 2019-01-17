@@ -26,8 +26,9 @@
     }
 
     // Recebe o id do cliente do cliente via GET
-    if (isset($_GET['id']))
+    if (isset($_GET['id'])) {
         $id_cliente = (isset($_GET['id'])) ? $_GET['id'] : '';
+    }
 
     // Valida se existe um id e se ele é numérico
     if (!empty($id_cliente) && is_numeric($id_cliente)) :
@@ -90,13 +91,14 @@
                                     </div>
                                     
                                     <div class="col-md-2">
+                                    
                                         <div class="row"> 
                                             <div class="col-md-12">    
                                                 <input type="hidden" name="acao" value="editar">
                                                 <input type="hidden" name="id" value="<?= $cliente->id ?>">
                                                 <input type="hidden" name="foto_atual" value="<?= $cliente->foto ?>">
-                                                <button type="submit" class="btn btn-primary" id='botao'>Gravar</button>
-                                                <a href='../painel.php' class="btn btn-danger">Cancelar</a>                                            
+                                                <button type="submit" class="btn btn-outline-success" id='botao'>Gravar</button>
+                                                <a href='../painel.php' class="btn btn-outline-danger">Cancelar</a>                                            
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +138,7 @@
             </script>
             <script src="../assets/js/vendor/popper.min.js"></script>
             <script src="../dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="js/custom.js"></script>
+            <script type="text/javascript" src="./js/custom.js"></script>
             <!-- Icons -->
             <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
             <script>

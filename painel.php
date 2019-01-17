@@ -20,14 +20,14 @@
     mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
     session_start();
     if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-      header("Location: login.php");
-      exit;
+        header("Location: login.php");
+        exit;
     } else {
-      echo "<center>Você está logado</center>";
+        echo "<center>Você está logado</center>";
     }
 
     // Recebe o termo de pesquisa se existir
-    $termo = (isset($_GET['termo'])) ? $_GET['termo'] : '';
+    $termo = (isset($_POST['termo'])) ? $_POST['termo'] : '';
 
     // Verifica se o termo de pesquisa está vazio, se estiver executa uma consulta completa
     if (empty($termo)) :
@@ -63,24 +63,24 @@
           <?php $HeaderContext = "Servidores"; ?>
           <?php include("./partials/headercontext.php")  ?>
 
-          
-          <form action="" method="get" id='form-contato' class="">
-          <div class="row">
-            <div class="col">          
-            <label class="control-label" for="termo">Pesquisar</label>            
-              <input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
-            </div>
-          </div>
-          <br>
-            <div class="row">
-            <div class="col">          
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-            <a href='painel.php' class="btn btn-primary">Ver Todos</a>
-            <a href='./cadastro_completo/cadastro.php' class="btn btn-success pull-right">Cadastrar Servidores</a>
-          </div>
-          </div>
-          </form>
 
+          <form action="" method="POST" id='form-contato' class="">
+            <div class="row">
+              <div class="col">          
+              <label class="control-label" for="termo">Pesquisar</label>            
+                <input type="text" class="form-control" id="termo" name="termo" data_nascimento="termo" placeholder="Infome o Nome ou E-mail ou celular">
+              </div>
+            </div>
+            <br>
+              <div class="row">
+              <div class="col">          
+              <button type="submit" class="btn btn-outline-danger">Pesquisar</button>
+              <a href='painel.php' class="btn btn-outline-info">Ver Todos</a>
+              <a href='./cadastro_completo/cadastro.php' class="btn btn-outline-success">Cadastrar Servidores</a>
+            </div>
+            </div>
+          </form>
+  
           <?php if (!empty($clientes)) : ?>
 
           <table class="table table-striped table-hover table-sm">
@@ -106,8 +106,8 @@
                 <td><?= $cliente->celular ?></td>
                 <td><?= $cliente->status ?></td>
                 <td>
-                  <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-primary">Editar</a>															
-                  <a href='javascript:void(0)' class="btn btn-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
+                  <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-outline-info">Editar</a>															
+                  <a href='javascript:void(0)' class="btn btn-outline-danger" rel="<?= $cliente->id ?>">Excluir</a>
                 </td>
               </tr>	
             <?php endforeach; ?>
@@ -118,16 +118,12 @@
           <h3 class="text-center text-primary">Não existem Funcionários cadastrados!</h3>
         <?php endif; ?>
 
-        <p style="text-align:center;">
-        <a href="logout.php"><input type="submit" class="sb bradius" value="sair" /></a>
-        </p>
+        
           </div>
           
         </main>
       </div>
     </div>
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="./assets/js/vendor/popper.min.js"></script>
@@ -137,7 +133,6 @@
     <script>
       feather.replace()
     </script>
-
-     <script type="text/javascript" src="./cadastro_completo/js/custom.js"></script>
+<script type="text/javascript" src="./cadastro_completo/js/custom.js"></script>
 </body>
 </html>
