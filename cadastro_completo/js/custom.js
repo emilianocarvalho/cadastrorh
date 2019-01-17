@@ -156,7 +156,7 @@ function validaCadastro(evt){
 	var numero_dependente = document.getElementById('numero_dependente');
 	var telefone = document.getElementById('telefone');
 	var celular = document.getElementById('celular');
-	var whatsapp = document.getElementById('whatsapp');
+	var whatsapp = document.querySelector('#whatsapp');
 	var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var contErro = 0;
 
@@ -558,9 +558,9 @@ function validaCadastro(evt){
 	/* Validação do campo Whatsapp */
 	caixa_whatsapp = document.querySelector('.msg-whatsapp');
 	if(whatsapp.value == ""){
-		// caixa_whatsapp.innerHTML = "Favor preencher o Whatsapp";
-		// caixa_whatsapp.style.display = 'block';
-		// contErro += 1;
+		caixa_whatsapp.innerHTML = "Favor preencher o Whatsapp";
+		caixa_whatsapp.style.display = 'block';
+		contErro += 1;
 	}else{
 		caixa_whatsapp.style.display = 'none';
 	}

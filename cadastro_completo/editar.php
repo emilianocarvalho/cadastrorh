@@ -26,8 +26,9 @@
     }
 
     // Recebe o id do cliente do cliente via GET
-    if (isset($_GET['id']))
+    if (isset($_GET['id'])) {
         $id_cliente = (isset($_GET['id'])) ? $_GET['id'] : '';
+    }
 
     // Valida se existe um id e se ele é numérico
     if (!empty($id_cliente) && is_numeric($id_cliente)) :
@@ -35,7 +36,7 @@
         // Captura os dados do cliente solicitado
         $conexao = conexao::getInstance();
         $sql = 'SELECT id, nome, pai, mae, rua, numero, complemento, cep, bairro, cidade, email, cpf, identidade, titulo, zona, secao, pis, 
-            carteiratrabalho, reservista, escolar, instituicao, curso, deficiente, nota, cargo, funcao, forma_admissao, regime, setor, matricula, data_nascimento, data_admissao, sexo, nacionalidade, 
+carteiratrabalho, reservista, escolar, instituicao, curso, deficiente, nota, cargo, funcao, forma_admissao, regime, setor, matricula, data_nascimento, data_admissao, sexo, nacionalidade, 
             naturalidade, estado, estado_civil, numero_dependente, telefone, celular, whatsapp, banco, agencia, conta_corrente, status, foto FROM tab_clientes WHERE id = :id';
         $stm = $conexao->prepare($sql);
         $stm->bindValue(':id', $id_cliente);
@@ -136,7 +137,7 @@
             </script>
             <script src="../assets/js/vendor/popper.min.js"></script>
             <script src="../dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="js/custom.js"></script>
+            <script type="text/javascript" src="./js/custom.js"></script>
             <!-- Icons -->
             <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
             <script>

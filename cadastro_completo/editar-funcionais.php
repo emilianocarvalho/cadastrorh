@@ -24,10 +24,10 @@
                     <option value="<?= $cliente->forma_admissao ?>">
                         <?= $cliente->forma_admissao ?>
                     </option>
-                    <option value="Sem Concurso">Sem Concurso</option>
+                    <option value="sem Concurso">Concurso</option>
                     <option value="Concurso">Concurso</option>
                     <option value="Contrato">Contrato</option>
-                    <option value="Em Comissao">Em Comissão</option>
+                    <option value="em Comissao">Comissão</option>
                 </select>
                 <span class='msg-erro msg-forma_admissao'></span>
             </div>
