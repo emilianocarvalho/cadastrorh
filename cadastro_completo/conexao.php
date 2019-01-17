@@ -7,7 +7,7 @@ define('HOST', 'localhost');
 define('DBNAME', 'cadastro');
 define('CHARSET', 'utf8');
 define('USER', 'root');
-define('PASSWORD', 'poli20');
+define('PASSWORD', 'D3vpr0c0n@');
 define('SERVER', 'linux');
 
 class conexao
@@ -32,11 +32,10 @@ class conexao
      */
     private static function verificaExtensao()
     {
-
         switch (SGBD) :
             case 'mysql':
             $extensao = 'pdo_mysql';
-            break;
+        break;
         case 'mssql':
             {
                 if (SERVER == 'linux') :
@@ -48,7 +47,7 @@ class conexao
             }
         case 'postgre':
             $extensao = 'pdo_pgsql';
-            break;
+        break;
         endswitch;
 
         if (!extension_loaded($extensao)) :
@@ -63,7 +62,6 @@ class conexao
      */
     public static function getInstance()
     {
-
         self::verificaExtensao();
 
         if (!isset(self::$pdo)) {
@@ -72,7 +70,7 @@ class conexao
                 switch (SGBD) :
                     case 'mysql':
                     self::$pdo = new \PDO("mysql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
-                    break;
+                break;
                 case 'mssql':
                     {
                         if (SERVER == 'linux') :
@@ -84,7 +82,7 @@ class conexao
                     }
                 case 'postgre':
                     self::$pdo = new \PDO("pgsql:host=" . HOST . "; dbname=" . DBNAME . ";", USER, PASSWORD, $opcoes);
-                    break;
+                break;
                 endswitch;
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
@@ -96,15 +94,9 @@ class conexao
 
     public static function isConectado()
     {
-
         if (self::$pdo) :
-            return true;
-        else :
+            return true; else :
             return false;
         endif;
     }
-
 }
-
-
-

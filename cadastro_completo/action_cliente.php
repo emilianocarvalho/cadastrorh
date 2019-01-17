@@ -327,12 +327,12 @@
     endif;
               
     // Monta o caminho de destino com o nome do arquivo e sua extensão
-		$filefotoextensao = $_FILES['foto']['name'];
-		$ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
+        $filefotoextensao = $_FILES['foto']['name'];
+        $ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
 
     $nome_foto = $matricula . "." . $ext;
 
-		
+        
     // Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino
     if (!move_uploaded_file($_FILES['foto']['tmp_name'], 'fotos/' . $nome_foto)) :
         echo "Houve um erro ao gravar arquivo na pasta de destino!";
@@ -438,8 +438,8 @@
     endif;
               
     // Monta o caminho de destino com o nome do arquivo e sua extensão
-		$filefotoextensao = $_FILES['foto']['name'];
-		$ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
+        $filefotoextensao = $_FILES['foto']['name'];
+        $ext = pathinfo($filefotoextensao, PATHINFO_EXTENSION);
 
     $nome_foto = $matricula . "." . $ext;
               

@@ -31,9 +31,9 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 <?php include("./../partials/header.php"); ?>
         <?php include("./../partials/menu_sidebar.php"); ?>
 
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <?php $HeaderContext = "Cadastro de Servidores"; ?>
-                <?php include("./../partials/headercontext.php")  ?>
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<?php $HeaderContext = "Cadastro de Servidores"; ?>
+				<?php include("./../partials/headercontext.php")  ?>
 	
 				<!-- Inicio Formulário -->
 					<form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
@@ -100,45 +100,14 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
 			<script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 			<script src="../assets/js/vendor/popper.min.js"></script>
       <script src="../dist/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/custom.js"></script>
 	
 			<!-- Icons -->
 			<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 			<script>
 				feather.replace()
-			</script>
-	
-			<!-- Graphs -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-			<script>
-				var ctx = document.getElementById("myChart");
-				var myChart = new Chart(ctx, {
-					type: 'line',
-					data: {
-						labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-						datasets: [{
-							data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-							lineTension: 0,
-							backgroundColor: 'transparent',
-							borderColor: '#007bff',
-							borderWidth: 4,
-							pointBackgroundColor: '#007bff'
-						}]
-					},
-					options: {
-						scales: {
-							yAxes: [{
-								ticks: {
-									beginAtZero: false
-								}
-							}]
-						},
-						legend: {
-							display: false,
-						}
-					}
-				});
-			</script>
+				</script>
+		
+			<script type="text/javascript" src="./js/custom.js"></script>
 	
 </body>
 </html>
