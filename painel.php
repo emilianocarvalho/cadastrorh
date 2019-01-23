@@ -107,7 +107,7 @@
                 <td><?= $cliente->status ?></td>
                 <td>
                   <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-outline-info">Editar</a>															
-                  <a href='javascript:void(0)' class="btn btn-outline-danger" rel="<?= $cliente->id ?>">Excluir</a>
+                  <a href='javascript:void(0)' class="btn btn-outline-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
                 </td>
               </tr>	
             <?php endforeach; ?>
