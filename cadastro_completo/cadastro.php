@@ -20,7 +20,7 @@ mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
 
 session_start();
 if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 } else {
     echo "<center>Você está logado</center>";

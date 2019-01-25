@@ -8,7 +8,7 @@ function loginsuccessfully() {
     setTimeout("window.location='painel.php'", 1000);
 }
 function loginfailed(){
-    setTimeout ("window.location='login.php'", 1000);
+    setTimeout ("window.location='index.php'", 1000);
 }
 </script>
 </head>

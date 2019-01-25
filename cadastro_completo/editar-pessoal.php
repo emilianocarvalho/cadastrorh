@@ -35,10 +35,15 @@
                 <input type="numero" class="form-control" id="numero" maxlength="12" name="numero" value="<?php echo $cliente->numero; ?>" placeholder="Informe o N°">
                 <span class='msg-erro msg-numero'></span>
             </div>
-            <div class="formgroup col-md-6">
+            <div class="formgroup col-md-4">
                 <label for="complemento">Complemento</label>
-                <input type="complemento" class="form-control" id="complemento" name="complemento" value="<?php echo $cliente->complemento; ?>" placeholder="Informe o Complemento">
+                <input type="text" class="form-control" id="complemento" name="complemento" value="<?php echo $cliente->complemento; ?>" placeholder="Informe o Complemento">
                 <span class='msg-erro msg-complemento'></span>
+            </div>
+            <div class="formgroup col-md-2">
+                <label for="tipo_sangue">Tipo de Sangue</label>
+                <input type="text" class="form-control" id="tipo_sangue" name="tipo_sangue" value="<?php echo $cliente->tipo_sangue; ?>" placeholder="Informe Tipo Sanguíneo">
+                <span class='msg-erro msg-tipo_sangue'></span>
             </div>
         </div>
 

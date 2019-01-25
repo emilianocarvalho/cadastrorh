@@ -20,7 +20,7 @@
     mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
     session_start();
     if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-        header("Location: login.php");
+        header("Location: index.php");
         exit;
     } else {
         echo "<center>Você está logado</center>";
@@ -33,7 +33,7 @@
     if (empty($termo)) :
 
       $conexao = conexao::getInstance();
-    $sql = 'SELECT id, nome, email, celular, data_nascimento, status, foto FROM tab_clientes';
+    $sql = 'SELECT id, nome, email, celular, data_nascimento, status, foto FROM servidor';
     $stm = $conexao->prepare($sql);
     $stm->execute();
     $clientes = $stm->fetchAll(PDO::FETCH_OBJ);
@@ -42,7 +42,7 @@
       
       // Executa uma consulta baseada no termo de pesquisa passado como parâmetro
     $conexao = conexao::getInstance();
-    $sql = 'SELECT id, nome, email, celular, status, foto FROM tab_clientes WHERE nome LIKE :nome OR email LIKE :email 
+    $sql = 'SELECT id, nome, email, celular, status, foto FROM servidor WHERE nome LIKE :nome OR email LIKE :email 
         OR celular LIKE :celular';
     $stm = $conexao->prepare($sql);
     $stm->bindValue(':nome', $termo . '%');

@@ -58,7 +58,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <label for="reservista">Carteira Reservista</label>
+                <label for="reservista">Reservista</label>
                 <input type="reservista" class="form-control" id="reservista" maxlength="20" name="reservista" value="<?= $cliente->reservista ?>" placeholder="Informe a Reservista">
                 <span class='msg-erro msg-reservista'></span>
             </div>
@@ -67,13 +67,13 @@
 
         <div class="form-row">
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
                 <label for="escolar">Instrução Escolar</label>
-                <input type="escolar" class="form-control" id="escolar" maxlength="50" name="escolar" value="<?= $cliente->escolar ?>" placeholder="Informer a Instrução Escolar">
+                <input type="escolar" class="form-control" id="escolar" maxlength="50" name="escolar" value="<?= $cliente->escolar ?>" placeholder="Informe a Instrução Escolar">
                 <span class='msg-erro msg-escolar'></span>
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
                 <label for="instituicao">Instituição</label>
                 <input type="instituicao" class="form-control" id="instituicao" maxlength="50" name="instituicao" value="<?= $cliente->instituicao ?>" placeholder="Informe a Instituição">
                 <span class='msg-erro msg-instituicao'></span>
@@ -83,17 +83,25 @@
                 <input type="curso" class="form-control" id="curso" maxlength="50" name="curso" value="<?= $cliente->curso ?>" placeholder="Informe o Curso Formação">
                 <span class='msg-erro msg-curso'></span>
             </div>
+        </div>
 
-            <div class="form-group col-md-2">
+        <div class="form-row">
+            <div class="form-group col-md-3">
                 <label for="deficiente">Deficiente</label>
                 <input type="deficiente" class="form-control" id="deficiente" maxlength="50" name="deficiente" value="<?= $cliente->deficiente ?>" placeholder="Informe a Deficiência">
                 <span class='msg-erro msg-deficiente'></span>
             </div>
+            <div class="form-group col-md-9">
+                <label for="deficiente_tipo">Deficiente Tipo</label>
+                <input type="deficiente_tipo" class="form-control" id="deficiente_tipo" maxlength="50" name="deficiente_tipo" value="<?= $cliente->deficiente_tipo ?>" placeholder=" Informe Tipo de Deficiência">
+                <span class='msg-erro msg-deficiente_tipo'></span>
+            </div>
 
         </div>
+
         <div class="form-row">                
             <div class="form-group col-md-12">
-                <label for="nota">Anotações:</label>
+                <label for="nota">Nota:</label>
                 <textarea class="form-control" name="nota" id="nota">
                     <?php echo $cliente->nota; ?>
                 </textarea>
