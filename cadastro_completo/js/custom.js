@@ -156,6 +156,10 @@ function validaCadastro(evt){
 	var numero_dependente = document.getElementById('numero_dependente');
 	var telefone = document.getElementById('telefone');
 	var celular = document.getElementById('celular');
+	var cnh_categoria = document.getElementById('cnh_categoria');
+	var tipo_sangue = document.getElementById('tipo_sangue');
+	var deficiente_tipo = document.getElementById('deficiente_tipo');
+	var cnh = document.getElementById('cnh');
 	var whatsapp = document.querySelector('#whatsapp');
 	var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var contErro = 0;
@@ -593,6 +597,55 @@ function validaCadastro(evt){
 		contErro += 1;
 	}else{
 		caixa_conta_corrente.style.display = 'none';
+	}
+
+	/* Validação do campo CNH */
+	caixa_cnh = document.querySelector('.msg-cnh');
+	if(cnh.value == ""){
+		caixa_cnh.innerHTML = "Favor preencher o CNH";
+		caixa_cnh.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_cnh.style.display = 'none';
+	}
+	/* Validação do campo CNH CATEGORIA */
+	caixa_cnh_categoria = document.querySelector('.msg-cnh_categoria');
+	if(cnh_categoria.value == ""){
+		caixa_cnh_categoria.innerHTML = "Favor preencher a Categoria do CNH";
+		caixa_cnh_categoria.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_cnh_categoria.style.display = 'none';
+	}
+
+	/* Validação do campo TIPO SANGUE */
+	caixa_tipo_sangue = document.querySelector('.msg-tipo_sangue');
+	if(tipo_sangue.value == ""){
+		caixa_tipo_sangue.innerHTML = "Favor preencher o Tipo Sanguíneo";
+		caixa_tipo_sangue.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_tipo_sangue.style.display = 'none';
+	}
+
+	/* Validação do campo DEFICIENTE */
+	caixa_deficiente = document.querySelector('.msg-deficiente');
+	if(deficiente.value == ""){
+		caixa_deficiente.innerHTML = "Favor preencher a Deficiência";
+		caixa_deficiente.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_deficiente.style.display = 'none';
+	}
+
+	/* Validação do campo DEFICIENTE */
+	caixa_deficiente_tipo = document.querySelector('.msg-deficiente_tipo');
+	if(deficiente_tipo.value == ""){
+		caixa_deficiente_tipo.innerHTML = "Favor preencher o Tipo de Deficiência";
+		caixa_deficiente_tipo.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_deficiente_tipo.style.display = 'none';
 	}
 
 	/* Validação do campo status */

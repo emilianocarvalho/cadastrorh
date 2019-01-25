@@ -7,7 +7,7 @@ define('HOST', 'localhost');
 define('DBNAME', 'cadastro');
 define('CHARSET', 'utf8');
 define('USER', 'root');
-define('PASSWORD', 'D3vpr0c0n@');
+define('PASSWORD', 'pr0c0np!@#');
 define('SERVER', 'linux');
 
 class conexao

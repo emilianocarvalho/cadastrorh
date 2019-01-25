@@ -1,5 +1,4 @@
 
-
         <b><span class="text-black-50">DADOS FUNCIONAIS</span></b>
         <hr>
         <div class="form-row">
@@ -7,46 +6,42 @@
             <div class="form-group col-md-2">
 
                 <label for="cargo">Cargo</label>
-                <input type="cargo" class="form-control" name="cargo" id="cargo" value="<?= $cliente->cargo ?>" placeholder="Informe o Cargo">
+                <input type="text" class="form-control" name="cargo" id="cargo" value="<?= $cliente->cargo ?>" placeholder="Informe o Cargo">
                 <span class='msg-erro msg-cargo'></span>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="funcao">Função</label>
-                <input type="funcao" class="form-control" name="funcao" id="funcao" value="<?= $cliente->funcao ?>" placeholder="Informe a Função">
+                <input type="text" class="form-control" name="funcao" id="funcao" value="<?= $cliente->funcao ?>" placeholder="Informe a Função">
                 <span class='msg-erro msg-funcao'></span>
             </div>
 
-
             <div class="form-group col-md-3">
                 <label for="forma_admissao">Forma de Admissão</label>
-                <select class="form-control" name="forma_admissao" id="forma_admissao">
-                    <option value="<?= $cliente->forma_admissao ?>">
-                        <?= $cliente->forma_admissao ?>
-                    </option>
-                    <option value="sem Concurso">Concurso</option>
-                    <option value="Concurso">Concurso</option>
-                    <option value="Contrato">Contrato</option>
-                    <option value="em Comissao">Comissão</option>
-                </select>
+                     <?php  
+                        include_once("./../utils/utils.php");
+
+                        $types = array('Sem Concurso','Concurso','Contrato','Comissão');
+                        generate_OptionsForms($types,$cliente->forma_admissao,'Contrato','forma_admissao','forma_admissao');
+                    ?>
+
                 <span class='msg-erro msg-forma_admissao'></span>
             </div>
+
             <div class="form-group col-md-2">
 
                 <label for="regime">Regime</label>
-                <select class="form-control" name="regime" id="regime">
-                    <option value="<?= $cliente->regime ?>">
-                        <?= $cliente->regime ?>
-                    </option>
-                    <option value="Estatuario">Estatutário</option>
-                    <option value="Exclusivamente em Comissao">Exclusivamente em Comissão</option>
-                </select>
+                     <?php  
+                        include_once("./../utils/utils.php");
+                        $types = array('Estatutário','Exclusivamente em Comissão');
+                        generate_OptionsForms($types,$cliente->regime,'Estatutário','regime','regime');
+                    ?>
                 <span class='msg-erro msg-regime'></span>
             </div>
 
             <div class="form-group col-md-2">
                 <label for="setor">Setor</label>
-                <input type="setor" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
+                <input type="text" class="form-control" id="setor" name="setor" value="<?= $cliente->setor ?>" placeholder="Informe o Setor">
                 <span class='msg-erro msg-setor'></span>
             </div>
         </div>
@@ -69,14 +64,13 @@
 
             <div class="form-group col-md-4">
                 <label for="sexo">Sexo</label>
-                <select class="form-control" name="sexo" id="sexo">
-                    <option value="<?= $cliente->sexo ?>">
-                        <?= $cliente->sexo ?>
-                    </option>
-                    <option value="M">M</option>
-                    <option value="F">F</option>
-                    <option value="O">O</option>
-                </select>
+                    <?php  
+                    include_once("./../utils/utils.php");
+
+                    $types = array('M','F','O');
+                    generate_OptionsForms($types,$cliente->sexo,'M','sexo','sexo');
+                    ?> 
+
                 <span class='msg-erro msg-sexo'></span>
             </div>
 
@@ -241,20 +235,16 @@
                 <div class="form-group col-md-4">
 
                     <label for="estado_civil">Estado Civil</label>
-                    <select class="form-control" name="estado_civil" id="estado_civil">
-                        <option value="<?= $cliente->estado_civil ?>">
-                            <?= $cliente->estado_civil ?>
-                        </option>
-                        <option value="Casado">Casado(a)</option>
-                        <option value="Divorcio">Divorcio(a)</option>
-                        <option value="Junto">Junto(a)</option>
-                        <option value="Separado">Separado(a)</option>
-                        <option value="Solteiro">Solteiro(a)</option>
-                        <option value="Viuvo">Viuvo(a)</option>
-                    </select>
-                    <span class='msg-erro msg-estado_civil'></span>
-                </div>
+                    <?php  
+                        include_once("./../utils/utils.php");
 
+                        $types = array('Casado(a)','Divorciado(a)','Junto(a)','Separado(a)','Solteiro(a)','Viúvo(a)');
+                        generate_OptionsForms($types,$cliente->estado_civil,'Solteiro(a)','estado_civil','estado_civil');
+                    ?>
+
+                    <span class='msg-erro msg-estado_civil'></span>
+                </div>               
+                
                 <div class="form-group col-md-3">
                     <label for="numero_dependente">Nº Dependente(s)</label>
                     <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
@@ -305,6 +295,23 @@
                 <input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
                 <span class='msg-erro msg-conta_corrente'></span>
             </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+
+                <label for="cnh">CNH</label>
+                <input type="cnh" class="form-control" id="cnh" maxlength="20" name="cnh" value="<?= $cliente->cnh ?>" placeholder="Informe o CNH">
+                <span class='msg-erro msg-cnh'></span>
+            </div>
+
+            <div class="form-group col-md-6">
+
+                <label for="cnh_categoria">Categoria de CNH</label>
+                <input type="cnh_categoria" class="form-control" id="cnh_categoria" maxlength="20" name="cnh_categoria" value="<?= $cliente->cnh_categoria ?>" placeholder="Informe o Tipo de CNH">
+                <span class='msg-erro msg-cnh_categoria'></span>
+            </div>
+
         </div>
         <div class="form-row">
         <div class="form-group col-md-6">
