@@ -298,7 +298,12 @@
         if ('' === $deficiente_tipo || strlen($deficiente_tipo) < 1) {
             $mensagem .= '<li>Favor preencher o Tipo de Deficiência.<li>';
         }
-
+        
+        // if ('' ==! $deficiente || strlen($deficiente) > 1) {
+        //     if ('' === $deficiente_tipo || strlen($deficiente_tipo) < 1) {
+        //         $mensagem .= '<li>Favor preencher o Tipo de Deficiência.<li>';
+        //     }
+    
         if ('' === $cnh_categoria || strlen($cnh_categoria) < 1) {
             $mensagem .= '<li>Favor preencher o Tipo de CNH.<li>';
         }

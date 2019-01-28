@@ -648,6 +648,8 @@ function validaCadastro(evt){
 		caixa_deficiente_tipo.style.display = 'none';
 	}
 
+
+
 	/* Validação do campo status */
 	caixa_status = document.querySelector('.msg-status');
 	if(status.value == ""){
