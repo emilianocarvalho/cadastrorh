@@ -23,7 +23,7 @@ class conexao
      */
     private function __construct()
     {
-        //
+    
     }
 
     /*
