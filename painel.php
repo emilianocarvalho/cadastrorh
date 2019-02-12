@@ -13,6 +13,9 @@
 <body>
 		<?php
 
+    require_once './utils/const.php';
+    require_once './utils/utils.php';
+
     require 'cadastro_completo/conexao.php';
 
     $conexao = mysqli_connect(HOST, USER, PASSWORD, DBNAME) or die(mysql_error());
@@ -20,61 +23,56 @@
     mysqli_select_db($conexao, DBNAME) or die(mysqli_error());
 
     if (!$conexao) {
-      echo "Error: Unable to connect to MySQL." . PHP_EOL;
-      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-      exit;
-    }
-    
-    echo "Success: A proper connection to MySQL was made! The database is great." . PHP_EOL;
-    echo "Host information: " . mysqli_get_host_info($conexao) . PHP_EOL;
-    
-    // mysqli_close($conexao);
-    
-    session_start();
-    if (!isset($_SESSION["email"]) || !isset($_SESSION["senha"])) {
-        header("Location: index.php");
+        echo 'Error: Unable to connect to MySQL.'.PHP_EOL;
+        echo 'Debugging errno: '.mysqli_connect_errno().PHP_EOL;
+        echo 'Debugging error: '.mysqli_connect_error().PHP_EOL;
         exit;
-    } else {
-        echo "<center>Você está logado</center>";
     }
+
+    echo 'Success: A proper connection to MySQL was made! The database is great.'.PHP_EOL;
+    echo 'Host information: '.mysqli_get_host_info($conexao).PHP_EOL;
+
+    // mysqli_close($conexao);
+
+    session_start();
+    if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
+        header('Location: index.php');
+        exit;
+    }
+        echo '<center>Você está logado</center>';
 
     // Recebe o termo de pesquisa se existir
     $termo = (isset($_POST['termo'])) ? $_POST['termo'] : '';
 
     // Verifica se o termo de pesquisa está vazio, se estiver executa uma consulta completa
-    if (empty($termo)) :
-
-      $conexao = conexao::getInstance();
-    $sql = 'SELECT id, nome, email, celular, data_nascimento, status, foto FROM servidor';
-    $stm = $conexao->prepare($sql);
-    $stm->execute();
-    $clientes = $stm->fetchAll(PDO::FETCH_OBJ);
-
-    else :
-      
-      // Executa uma consulta baseada no termo de pesquisa passado como parâmetro
-    $conexao = conexao::getInstance();
-    $sql = 'SELECT id, nome, email, celular, status, foto FROM servidor WHERE nome LIKE :nome OR email LIKE :email 
+    if (empty($termo)) {
+        $conexao = conexao::getInstance();
+        $sql = 'SELECT id, nome, email, celular, data_nascimento, status, foto FROM servidor';
+        $stm = $conexao->prepare($sql);
+        $stm->execute();
+        $clientes = $stm->fetchAll(PDO::FETCH_OBJ);
+    } else {
+        // Executa uma consulta baseada no termo de pesquisa passado como parâmetro
+        $conexao = conexao::getInstance();
+        $sql = 'SELECT id, nome, email, celular, status, foto FROM servidor WHERE nome LIKE :nome OR email LIKE :email 
         OR celular LIKE :celular';
-    $stm = $conexao->prepare($sql);
-    $stm->bindValue(':nome', $termo . '%');
-    $stm->bindValue(':email', $termo . '%');
-    $stm->bindValue(':celular', $termo . '%');
-    $stm->execute();
-    $clientes = $stm->fetchAll(PDO::FETCH_OBJ);
-
-    endif;
+        $stm = $conexao->prepare($sql);
+        $stm->bindValue(':nome', $termo.'%');
+        $stm->bindValue(':email', $termo.'%');
+        $stm->bindValue(':celular', $termo.'%');
+        $stm->execute();
+        $clientes = $stm->fetchAll(PDO::FETCH_OBJ);
+    }
   ?>
     
-    <?php include("./partials/header.php"); ?>
+    <?php include './partials/header.php'; ?>
 
-      <?php include("./partials/menu_sidebar.php"); ?>
+      <?php include './partials/menu_sidebar.php'; ?>
     
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-          <?php $HeaderContext = "Servidores"; ?>
-          <?php include("./partials/headercontext.php")  ?>
+          <?php $HeaderContext = 'Servidores'; ?>
+          <?php include './partials/headercontext.php'; ?>
 
 
           <form action="" method="POST" id='form-contato' class="">
@@ -94,7 +92,8 @@
             </div>
           </form>
   
-          <?php if (!empty($clientes)) : ?>
+          <?php if (!empty($clientes)) {
+      ?>
 
           <table class="table table-striped table-hover table-sm">
           <caption>Listagem dos servidores</caption>
@@ -110,26 +109,32 @@
               </tr>
             </thead>
             <tbody>				
-            <?php foreach ($clientes as $cliente) : ?>
+            <?php foreach ($clientes as $cliente) {
+          ?>
               <tr>
-                <th scope="row"><?= $cliente->id ?></th>
-                <td><img src='cadastro_completo/fotos/<?= $cliente->foto ?>' height='40' width='40'></td>
-                <td><?= $cliente->nome ?></td>
-                <td><?= $cliente->email ?></td>
-                <td><?= $cliente->celular ?></td>
-                <td><?= $cliente->status ?></td>
+                <th scope="row"><?php echo $cliente->id; ?></th>
+                <?php $foto = '';?>
+                <td><img src='cadastro_completo/fotos/<?php echo verificaFoto($conexao, $cliente->id); ?>' height='40' width='40'></td>
+                <td><?php echo $cliente->nome; ?></td>
+                <td><?php echo $cliente->email; ?></td>
+                <td><?php echo $cliente->celular; ?></td>
+                <td><?php echo $cliente->status; ?></td>
                 <td>
-                  <a href='cadastro_completo/editar.php?id=<?= $cliente->id ?>' class="btn btn-outline-info">Editar</a>															
-                  <a href='javascript:void(0)' class="btn btn-outline-danger link_exclusao" rel="<?= $cliente->id ?>">Excluir</a>
+                  <a href='cadastro_completo/editar.php?id=<?php echo $cliente->id; ?>' class="btn btn-outline-info">Editar</a>															
+                  <a href='javascript:void(0)' class="btn btn-outline-danger link_exclusao" rel="<?php echo $cliente->id; ?>">Excluir</a>
                 </td>
               </tr>	
-            <?php endforeach; ?>
+            <?php
+      } ?>
           </table>
 
-        <?php else : ?>
+        <?php
+  } else {
+      ?>
 
           <h3 class="text-center text-primary">Não existem Funcionários cadastrados!</h3>
-        <?php endif; ?>
+        <?php
+  } ?>
 
         
           </div>
