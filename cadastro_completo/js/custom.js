@@ -637,7 +637,7 @@ function validaCadastro(evt){
 	}else{
 		caixa_deficiente.style.display = 'none';
 	}
-
+	
 	/* Validação do campo DEFICIENTE */
 	caixa_deficiente_tipo = document.querySelector('.msg-deficiente_tipo');
 	if(deficiente_tipo.value == ""){
@@ -647,6 +647,8 @@ function validaCadastro(evt){
 	}else{
 		caixa_deficiente_tipo.style.display = 'none';
 	}
+
+
 
 	/* Validação do campo status */
 	caixa_status = document.querySelector('.msg-status');
