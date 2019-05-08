@@ -1,11 +1,14 @@
 use cadastro;
 
-ALTER TABLE `cadastro`.`servidor` CHANGE COLUMN `e_mail` `email` VARCHAR(100) ;
+-- ALTER TABLE `cadastro`.`servidor` CHANGE COLUMN `e_mail` `email` VARCHAR(100) ;
 
-ALTER TABLE `cadastro`.`servidor` ADD COLUMN `status` VARCHAR(10) ;
+-- ALTER TABLE `cadastro`.`servidor` ADD COLUMN `status` VARCHAR(10) ;
 
 ALTER TABLE `cadastro`.`servidor` 
 CHANGE COLUMN `anotacoes` `nota` VARCHAR(246);
+
+ALTER TABLE `cadastro`.`servidor` 
+CHANGE COLUMN `nota` `nota` VARCHAR(246);
 
 ALTER TABLE `cadastro`.`servidor` 
 CHANGE COLUMN `deficiente` `deficiente` VARCHAR(3);

@@ -36,3 +36,10 @@ UPDATE `cadastro`.`servidor`  SET `deficiente`='Sim' where `deficiente` ='1'; CO
 UPDATE `cadastro`.`servidor`  SET `sexo`='F' where `sexo` ='1'; COMMIT;
 
 UPDATE `cadastro`.`servidor`  SET `sexo`='M' where `sexo` ='2'; COMMIT;
+
+
+-- alteração 04/02/2019
+
+ALTER TABLE `cadastro`.`servidor` 
+CHANGE COLUMN `nome` `nome` VARCHAR(100) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
+

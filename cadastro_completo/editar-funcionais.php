@@ -49,14 +49,14 @@
             <div class="form-group col-md-6">
 
                 <label for="data_nascimento">Data de Nascimento</label>
-                <input type="data_nascimento" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
+                <input type="text" class="form-control" id="data_nascimento" maxlength="10" value="<?= $data_formatada ?>" name="data_nascimento">
                 <span class='msg-erro msg-data'></span>
             </div>
 
             <div class="form-group col-md-6">
 
                 <label for="data_admissao">Data de Admissão</label>
-                <input type="data_admissao" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
+                <input type="text" class="form-control" id="data_admissao" maxlength="10" value="<?= $data_formatada2 ?>" name="data_admissao">
                 <span class='msg-erro msg-data2'></span>
             </div>
         </div>
@@ -189,7 +189,7 @@
             <div class="form-group col-md-4">
 
                     <label for="naturalidade">Naturalidade</label>
-                    <input type="naturalidade" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
+                    <input type="text" class="form-control" id="naturalidade" maxlength="20" value="<?= $cliente->naturalidade ?>" name="naturalidade" placeholder="Informe a Naturalidade">
                     <span class='msg-erro msg-naturalidade'></span>
             </div>
 
@@ -247,7 +247,7 @@
                 
                 <div class="form-group col-md-3">
                     <label for="numero_dependente">Nº Dependente(s)</label>
-                    <input type="numero_dependente" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
+                    <input type="text" class="form-control" id="numero_dependente" name="numero_dependente" maxlength="2" value="<?= $cliente->numero_dependente ?>" placeholder="Informe o Número de Dependente">
                     <span class='msg-erro msg-numero_dependente'></span>
                 </div>
             </div>
@@ -257,18 +257,18 @@
 
             <div class="form-group col-md-4">
                 <label for="telefone">Telefone</label>
-                <input type="telefone" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
+                <input type="text" class="form-control" id="telefone" maxlength="12" name="telefone" value="<?= $cliente->telefone ?>" placeholder="Informe o Telefone">
                 <span class='msg-erro msg-telefone'></span>
             </div>
             <div class="form-group col-md-4">
                 <label for="celular">Celular</label>
-                <input type="celular" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
+                <input type="text" class="form-control" id="celular" maxlength="13" name="celular" value="<?= $cliente->celular ?>" placeholder="Informe o Celular">
                 <span class='msg-erro msg-celular'></span>
             </div>
 
             <div class="form-group col-md-4">
                 <label for="whatsapp">Whatsapp</label>
-                <input type="whatsapp" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" value="<?= $cliente->whatsapp ?>" placeholder="Informe o Whatsapp">
+                <input type="text" class="form-control" id="whatsapp" maxlength="13" name="whatsapp" value="<?= $cliente->whatsapp ?>" placeholder="Informe o Whatsapp">
                 <span class='msg-erro msg-whatsapp'></span>
             </div>
         </div>
@@ -277,7 +277,7 @@
             <div class="form-group col-md-4">
 
                 <label for="banco">Banco</label>
-                <input type="banco" class="form-control" id="banco" name="banco" value="<?= $cliente->banco ?>" style="text-transform:uppercase;" placeholder="Informe o Banco">
+                <input type="text" class="form-control" id="banco" name="banco" value="<?= $cliente->banco ?>" style="text-transform:uppercase;" placeholder="Informe o Banco">
                 <span class='msg-erro msg-banco'></span>
             </div>
 
@@ -285,14 +285,14 @@
             <div class="form-group col-md-4">
 
                 <label for="agencia">Agencia</label>
-                <input type="agencia" class="form-control" id="agencia" maxlength="20" name="agencia" value="<?= $cliente->agencia ?>" placeholder="Informe a Agência">
+                <input type="text" class="form-control" id="agencia" maxlength="20" name="agencia" value="<?= $cliente->agencia ?>" placeholder="Informe a Agência">
                 <span class='msg-erro msg-agencia'></span>
             </div>
 
             <div class="form-group col-md-4">
 
                 <label for="conta_corrente">Conta Corrente</label>
-                <input type="conta_corrente" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
+                <input type="text" class="form-control" id="conta_corrente" maxlength="20" name="conta_corrente" value="<?= $cliente->conta_corrente ?>" placeholder="Informe a Conta Corrente">
                 <span class='msg-erro msg-conta_corrente'></span>
             </div>
         </div>
@@ -301,14 +301,14 @@
             <div class="form-group col-md-6">
 
                 <label for="cnh">CNH</label>
-                <input type="cnh" class="form-control" id="cnh" maxlength="20" name="cnh" value="<?= $cliente->cnh ?>" placeholder="Informe o CNH">
+                <input type="text" class="form-control" id="cnh" maxlength="20" name="cnh" value="<?= $cliente->cnh ?>" placeholder="Informe o CNH">
                 <span class='msg-erro msg-cnh'></span>
             </div>
 
             <div class="form-group col-md-6">
 
                 <label for="cnh_categoria">Categoria de CNH</label>
-                <input type="cnh_categoria" class="form-control" id="cnh_categoria" maxlength="20" name="cnh_categoria" value="<?= $cliente->cnh_categoria ?>" placeholder="Informe o Tipo de CNH">
+                <input type="text" class="form-control" id="cnh_categoria" maxlength="20" name="cnh_categoria" value="<?= $cliente->cnh_categoria ?>" placeholder="Informe o Tipo de CNH">
                 <span class='msg-erro msg-cnh_categoria'></span>
             </div>
 
